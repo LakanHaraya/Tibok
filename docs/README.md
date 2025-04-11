@@ -9,7 +9,8 @@
 Ang **MuntingTibok** ay isang magaan at minimalistikong aklatan para sa
 pagkontrol ng LED o iba pang output device bilang *heartbeat indicator* na
 sumasalamin sa operational status ng sistema. Ang tibok ay maaaring magpakita ng
-iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY`.
+iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay sa antas ng alerto sa pamantayang
+[IEC 60073:2002](https://webstore.iec.ch/en/publication/587).
 
 > Ang aklatang ito ay bahagi ng *Proyektong LundayHangin* ngunit
 > maaaring isama sa anumang proyekto ng mikrokontroler na
