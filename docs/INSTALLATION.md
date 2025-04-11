@@ -3,7 +3,7 @@
 Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, magamit, at ma-uninstall ang MuntingTibok library.
 
 - [Installation](#installation)  
-  - [Paraan 1: Paggamit ng Arduino IDE](#paraan-1-paggamit-ng-arduino-ide)  
+  - ~~Paraan 1: Paggamit ng Arduino IDE~~
   - [Paraan 2: Paggamit ng PlatformIO](#paraan-2-paggamit-ng-platformio)
 - [Verification of Installation](#verification-of-installation)  
 - [Uninstallation](#uninstallation)  
@@ -13,9 +13,9 @@ Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, maga
 ---
 ## Installation
 
-### Paraan 1: *Paggamit ng Arduino IDE*
+### ~~Paraan 1: *Paggamit ng Arduino IDE*~~
 
-1. **I-download ang Library**  
+<!-- 1. **I-download ang Library**  
    I-download ang `MuntingTibok` library zip file mula sa [MuntingTibok Repository](https://github.com/LakanHaraya/MuntingTibok.git).
 
 2. **Buksan ang Arduino IDE**  
@@ -29,9 +29,7 @@ Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, maga
 
 4. **I-verify ang Pagkakasunod ng Installation**  
    - Pumunta sa `Sketch` > `Include Library` at hanapin ang `MuntingTibok` sa listahan ng mga available na library.  
-   - Kung makikita mo ito, matagumpay na itong na-install.
-
----
+   - Kung makikita mo ito, matagumpay na itong na-install. -->
 
 ### Paraan 2: *Paggamit ng PlatformIO*
 
@@ -42,6 +40,7 @@ Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, maga
    Buksan ang terminal at i-clone ang repository gamit ang git:
    ```bash
    git clone https://github.com/LakanHaraya/MuntingTibok.git
+   ```
 
 3. **Idagdag ang Library sa PlatformIO Project**
 
