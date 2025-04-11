@@ -1,9 +1,20 @@
-# MuntingTibok
+# 📖 `MuntingTibok/` v1.0.0
+
+📜 *Malapamantayan:* **LNDH-0051** *(Aktibo)*  
+📅 *Petsa ng Paglalathala:* **2025-04-11**  
+🔢 *Bersiyon:* **v1.0.0** *(Matatag)*  
+🛠️ *Huling Rebisyon:* **2025-04-11**  
+👨‍💻 *May-akda:* **Lakan Haraya Dima**  
 
 Ang **MuntingTibok** ay isang magaan at minimalistikong aklatan para sa
 pagkontrol ng LED o iba pang output device bilang *heartbeat indicator* na
-sumasalamin sa katayuan ng sistema. Ang tibok ay maaaring magpakita ng iba't
-ibang antas gaya ng NORMAL, WARNING, CRITICAL, o EMERGENCY.
+sumasalamin sa operational status ng sistema. Ang tibok ay maaaring magpakita ng
+iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY`.
+
+> Ang aklatang ito ay bahagi ng *Proyektong LundayHangin* ngunit
+> maaaring isama sa anumang proyekto ng mikrokontroler na
+> nangangailangan ng malinaw na pidbak na natatanaw, nadidinig, o
+> nahahaplos.
 
 ---
 
@@ -17,9 +28,11 @@ ibang antas gaya ng NORMAL, WARNING, CRITICAL, o EMERGENCY.
 
 ---
 
-## Sanggunian ng API
+## Karagdagang Dokumentasyon
 
-Para sa kompletong sanggunian ng API nito, tingnan ang `API_REFERENCE.md` [dito](../docs/API_REFERENCE.md). 
+- [INSTALLATION.md](../docs/INSTALLATION.md)
+- [API_REFERENCE.md](../docs/API_REFERENCE.md)
+- [CHANGELOG](../docs/CHANGELOG)
 
 ---
 
@@ -32,9 +45,12 @@ Tingnan ang [`examples/`](../examples/) folder para sa mga sumusunod na sketch
 - [`DynamicHeartbeat.ino`](../examples/DynamicHeartbeat.ino) – Pagpapalit ng tibok sa runtime
 - [`EnableDisableTibok.ino`](../examples/EnableDisableHeartbeat.ino) – Pagtikwas ng tibok
 
+> ### Testing
+> 1. I-upload ang isa sa mga halimbawa sa iyong board.
+> 2. Suriin kung gumagana ang heartbeat tulad ng inaasahan.
+
 ---
 
-## May-akda
+## Lisensiya
 
-Binuo ni Lakan Haraya Dima
-Bahagi ng *Proyektong LundayHangin*
+Ang **MuntingTibok** ay inilabas sa ilalim ng [MIT License](LICENSE)
