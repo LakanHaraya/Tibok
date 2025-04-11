@@ -62,12 +62,12 @@ Matapos idagdag ang library, i-compile at i-upload ang iyong code sa iyong board
 Upang matiyak na tama ang pag-install ng library, subukan ang isang halimbawa mula sa [`examples/`](../examples/) folder. Maaari mong buksan ang isa sa mga halimbawa at i-upload ito sa iyong board.
 
 ## Uninstallation
-Kung nais mong tanggalin ang library mula sa Arduino IDE o PlatformIO, sundin ang mga sumusunod:
+Kung nais mong tanggalin ang library mula sa ~~*Arduino IDE* o~~ *PlatformIO*, sundin ang mga sumusunod:
 
-### *Arduino IDE:*
-- Pumunta sa `Sketch` > `Include Library` > `Manage Libraries...`
+### ~~*Arduino IDE:*~~
+<!-- - Pumunta sa `Sketch` > `Include Library` > `Manage Libraries...`
 
-- Hanapin ang `MuntingTibok` at i-click ang **"Remove"** button.
+- Hanapin ang `MuntingTibok` at i-click ang **"Remove"** button. -->
 
 ### *PlatformIO:*
 - Tanggalin ang folder ng `MuntingTibok` mula sa `lib/` directory ng iyong proyekto.
