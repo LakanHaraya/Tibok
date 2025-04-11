@@ -16,8 +16,7 @@
  * @version 1.0.0
  */
 
-#ifndef MUNTINGTIBOK_H
-#define MUNTINGTIBOK_H
+#pragma once
 
 #include <Arduino.h>
 
@@ -93,5 +92,3 @@ class MuntingTibok {
          */
         void enable();
     };
-
-#endif // MUNTINGTIBOK_H
