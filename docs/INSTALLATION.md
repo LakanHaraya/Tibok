@@ -7,7 +7,7 @@ Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, maga
   - [Paraan 2: Paggamit ng PlatformIO](#paraan-2-paggamit-ng-platformio)
 - [Verification of Installation](#verification-of-installation)  
 - [Uninstallation](#uninstallation)  
-  - [Arduino IDE](#arduino-ide)  
+  - ~~Arduino IDE~~ 
   - [PlatformIO](#platformio)  
 
 ---
