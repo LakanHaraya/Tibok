@@ -4,7 +4,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
-## Talaan ng Nilalaman
+## Talaan ng API
 
 <center>
 
