@@ -16,6 +16,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 | [`setLevel(...)`](#void-setlevelheartbeatlevel-level) | Pinapalitan ang antas ng tibok |
 | [`disable()`](#void-disable) | Pansamantalang pinipindi ang indikador |
 | [`enable()`](#void-enable) | Pinapagana muli ang tibok |
+| [`HeartbeatLevel`](#enum-heartbeatlevel) | Enum ng mga predefined na antas ng tibok |
 
 </center>
 
@@ -86,19 +87,19 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
-## 🧭 Enum: `HeartbeatLevel`
+## Enum: `HeartbeatLevel`
 
 Predefined na tibok na mga delay (sa milliseconds):
 
 <center>
 
-| Enum | Value (*ms*) | Paliwanag |
-|------|-------|-----------|
-| `EMERGENCY` | `125` | Mabilis na tibok para sa matinding alerto |
-| `CRITICAL` | `250` | Kritikal na tibok |
-| `WARNING` | `500` | Babala |
-| `NORMAL` | `1000` | Pangkaraniwang tibok |
-| `DISABLED` | `-1` | Walang tibok |
+| Enum | Value (*ms*) | Dalasan (*Hz*) | Paliwanag |
+|------|-------|---------|-----------|
+| `EMERGENCY` | `125` | **4** | Mabilis na tibok para sa matinding alerto |
+| `CRITICAL` | `250` | **2** | Kritikal na tibok |
+| `WARNING` | `500` | **1** | Babala |
+| `NORMAL` | `1000` | **0.5** ( *1 ulit / 2 seg* ) | Pangkaraniwang tibok |
+| `DISABLED` | `-1` | ~ | Walang tibok |
 
 </center>
 
@@ -114,8 +115,8 @@ Predefined na tibok na mga delay (sa milliseconds):
 
 ## 📂 Kaugnay na File
 
-- `src/MuntingTibok.h` – Ang mga deklarasyon [dito](../src/MuntingTibok.h).
-- `src/MuntingTibok.cpp` – Ang mga implementasyon [dito](../src/MuntingTibok.cpp).
+- `src/MuntingTibok.h` – Ang mga deklarasyon ng API [dito](../src/MuntingTibok.h).
+- `src/MuntingTibok.cpp` – Ang mga implementasyon ng API [dito](../src/MuntingTibok.cpp).
 
 ---
 

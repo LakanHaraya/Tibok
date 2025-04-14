@@ -6,7 +6,7 @@
 🛠️ *Huling Rebisyon:* **2025-04-11**  
 👨‍💻 *May-akda:* **Lakan Haraya Dima**  
 
-Ang **MuntingTibok** ay isang magaan at minimalistikong aklatan para sa
+Ang **MuntingTibok** ay isang magaan at mumunting aklatan para sa
 pagkontrol ng LED o iba pang output device bilang *heartbeat indicator* na
 sumasalamin sa operational status ng sistema. Ang tibok ay maaaring magpakita ng
 iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay sa antas ng alerto sa pamantayang
