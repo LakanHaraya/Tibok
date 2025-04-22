@@ -12,10 +12,10 @@
 */
 
 #include <Arduino.h>
-#include <MuntingTibok.h>
+#include <Tibok.h>
 
 // Gumamit ng NORMAL bilang panimulang tibok
-MuntingTibok statusLED(13, NORMAL);
+Tibok statusLED(13, NORMAL);
 
 void setup() {
     // Simulan ang heartbeat (Active HIGH default)

@@ -2,7 +2,7 @@
   BasicHeartbeat.ino
   Simpleng paggamit ng default heartbeat na may Active HIGH logic.
 
-  Ipinapakita sa sketch na ito ang pinakapangunahing gamit ng MuntingTibok library,
+  Ipinapakita sa sketch na ito ang pinakapangunahing gamit ng Tibok library,
   kung saan ang isang LED (sa pin 13) ay tumitibok gamit ang default na "NORMAL"
   na antas (1000ms interval), na may Active HIGH logic (HIGH = ON).
 
@@ -11,10 +11,10 @@
 */
 
 #include <Arduino.h>
-#include <MuntingTibok.h>
+#include <Tibok.h>
 
-// Lumikha ng MuntingTibok object sa pin 13 na may NORMAL tibok (1000ms)
-MuntingTibok tibok(13, NORMAL);
+// Lumikha ng Tibok object sa pin 13 na may NORMAL tibok (1000ms)
+Tibok tibok(13, NORMAL);
 
 void setup() {
     // Simulan ang tibok gamit ang default na active HIGH logic

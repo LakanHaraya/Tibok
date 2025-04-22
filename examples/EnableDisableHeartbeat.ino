@@ -1,5 +1,5 @@
 /*
-  EnableDisableHeartbeat.ino - Halimbawa para sa MuntingTibok Library
+  EnableDisableHeartbeat.ino - Halimbawa para sa Tibok Library
   Pagtikwas ng tibok gamit ang enable() at disable() methods.
 
   Ipinapakita sa sketch na ito kung paano pansamantalang itigil o ibalik
@@ -11,10 +11,10 @@
 */
 
 #include <Arduino.h>
-#include <MuntingTibok.h>
+#include <Tibok.h>
 
 // LED na may NORMAL tibok (1000ms)
-MuntingTibok heartLED(13, NORMAL);
+Tibok heartLED(13, NORMAL);
 
 void setup() {
     // Simulan ang heartbeat (Active HIGH default)

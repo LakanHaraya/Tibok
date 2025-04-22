@@ -1,5 +1,5 @@
 /**
- * @file MuntingTibok.h
+ * @file Tibok.h
  * @brief Header file para sa MuntingTibok library — isang simpleng heartbeat blinker.
  * 
  * Ang MuntingTibok library ay isang simpleng aklatan na nagbibigay ng
@@ -31,18 +31,26 @@ enum HeartbeatLevel {
     EMERGENCY = 125,    /** 4 Hz – Napakabilis na tibok; maaaring indikasyon ng seryosong problema.*/
     CRITICAL = 250,     /** 2 Hz – Mabilis na tibok; senyales ng kritikal na kondisyon.*/
     WARNING = 500,      /** 1 Hz – Katamtamang tibok, may babala pero hindi malala.*/
-    NORMAL = 1000,      /** 0.5 Hz – Mabagal na tibok, lahat ay nasa pangkaraniwang operasyon.*/
-    DISABLED = -1       /** Walang tibok; Hindi pinapagana ang pagtibok.*/
+    NORMAL = 1000       /** 0.5 Hz – Mabagal na tibok, lahat ay nasa pangkaraniwang operasyon.*/
 };
 
 /**
- * @class MuntingTibok
+ * @class Tibok
  * @brief Klase para sa heartbeat indicator.
  * 
  * Mainam gamitin para sa status indication, error signaling, o simpleng
  * visual heartbeat ng isang embedded system.
  */
-class MuntingTibok {
+
+/**
+ * @brief Konstruktor para sa Tibok class.
+ * 
+ * @param pin GPIO pin number kung saan nakakabit ang status indicator.
+ * @param level Ang paunang antas ng pagtibok (heartbeat level).
+ * @param activeHigh Tinutukoy kung active HIGH o LOW ang output (default: `true`).
+ * @param enabled Kung awtomatikong papaganahin ang pagtibok (default: `true`).
+ */
+class Tibok {
     private:
         int _pin;                   /**Ang GPIO pin na ginagamit para sa status inidcator.*/
         HeartbeatLevel _level;      /**Ang kasalukuyang heartbeat level (frequency ng pagtibok).*/
@@ -52,22 +60,7 @@ class MuntingTibok {
         bool _enabled;              /**Nagpapahiwatig kung pinagana ang pagtibok. */
     
     public:
-        /**
-         * @brief Konstruktor para sa MuntingTibok class.
-         * 
-         * @param pin GPIO pin number kung saan nakakabit ang status indicator.
-         * @param level Ang paunang antas ng pagtibok (heartbeat level).
-         */
-        MuntingTibok(int pin, HeartbeatLevel level);
-
-        /**
-         * @brief Simulan ang MuntingTibok instance.
-         * 
-         * @param activeHigh Kung `true`, HIGH signal ang magsisindi sa
-         * status indicator; kung `false`, LOW signal.
-         * Default ay `true` (active HIGH).
-         */
-        void begin(bool activeHigh = true);
+        Tibok(int pin, HeartbeatLevel level, bool activeHigh = true, bool enabled = true);
 
         /**
          * @brief Dapat tawagin sa loob ng `loop()` function upang i-update at
@@ -80,7 +73,7 @@ class MuntingTibok {
          * 
          * @param level Ang bagong antas ng pagtibok (heartbeat level).
          */
-        void setLevel(HeartbeatLevel level);
+        void setHeartbeat(HeartbeatLevel level);
 
         /**
          * @brief Pinapatigil ang pagtibok ng status indicator.
@@ -91,4 +84,12 @@ class MuntingTibok {
          * @brief Pinapagana muli ang pagtibok ng status indicator.
          */
         void enable();
+
+        void setActiveHigh(bool activeHigh);
+        int getPin() const;
+        String getHeartbeat() const;
+        bool isActiveHigh() const;
+        bool isEnabled() const;
+        bool getState() const;
+        unsigned long getLastToggle() const;
     };

@@ -2,7 +2,7 @@
   ActiveLowHeartbeat.ino
   Gamit ang Active LOW configuration ng LED.
 
-  Ang sketch na ito ay nagpapakita kung paano gamitin ang MuntingTibok library
+  Ang sketch na ito ay nagpapakita kung paano gamitin ang Tibok library
   upang makontrol ang isang LED na may Active LOW logic. Sa halimbawang ito,
   ang LED ay kikilos sa pattern ng "WARNING" heartbeat (500ms interval).
   
@@ -11,11 +11,11 @@
 */
 
 #include <Arduino.h>
-#include <MuntingTibok.h>
+#include <Tibok.h>
 
-// Lumikha ng MuntingTibok object para sa pin 13.
+// Lumikha ng Tibok object para sa pin 13.
 // Ang 'WARNING' ay tumutukoy sa 500ms na interval.
-MuntingTibok invertedLED(13, WARNING);
+Tibok invertedLED(13, WARNING);
 
 void setup() {
     // I-configure ang LED bilang Active LOW.
