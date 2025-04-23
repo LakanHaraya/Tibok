@@ -8,15 +8,21 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 <center>
 
-| API | Paggamit |
-| :-- | :-- |
-| [`MuntingTibok(...)`](#muntingtibokint-pin-heartbeatlevel-level) | Konstruktor – paglikha ng halimbagay |
-| [`begin(bool)`](#void-beginbool-activehigh--true) | Itinatakda kung active HIGH o LOW |
-| [`update()`](#void-update) | Isinasapanahon ang tibok |
-| [`setLevel(...)`](#void-setlevelheartbeatlevel-level) | Pinapalitan ang antas ng tibok |
-| [`disable()`](#void-disable) | Pansamantalang pinipindi ang indikador |
-| [`enable()`](#void-enable) | Pinapagana muli ang tibok |
-| [`HeartbeatLevel`](#enum-heartbeatlevel) | Enum ng mga predefined na antas ng tibok |
+| API                               | Paggamit                                                              |
+| :--                               | :--                                                                   |
+| [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level) | Konstruktor – paglikha ng halimbagay ng `Tibok` class                    |
+| [`setActiveHigh(...)`](#void-setactivehighbool-activehigh)    | Itinatakda kung active HIGH o LOW ang output                            |
+| [`update()`](#void-update)         | Isinasapanahon ang tibok, kailangang tawagin sa loob ng `loop()`        |
+| [`setHeartbeat(...)`](#void-setheartbeatheartbeatlevel-level) | Pinapalitan ang kasalukuyang antas ng tibok                            |
+| [`disable()`](#void-disable)       | Pansamantalang pinipindi ang tibok ng status indicator                  |
+| [`enable()`](#void-enable)         | Pinapagana muli ang tibok ng status indicator                          |
+| [`getPin()`](#int-getpin-const)    | Ibinabalik ang GPIO pin na ginagamit para sa status indicator          |
+| [`getHeartbeat()`](#string-getheartbeat-const) | Ibinabalik ang kasalukuyang antas ng tibok bilang isang string          |
+| [`isActiveHigh()`](#bool-isactivehigh-const) | Ibinabalik kung active HIGH o LOW ang output                           |
+| [`isEnabled()`](#bool-isenabled-const) | Ibinabalik kung ang tibok ay pinagana o hindi                          |
+| [`getState()`](#bool-getstate-const) | Ibinabalik ang kasalukuyang estado ng status indicator                 |
+| [`getLastToggle()`](#unsigned-long-getlasttoggle-const) | Ibinabalik ang huling oras ng pagtibok (millis)                         |
+| [`HeartbeatLevel`](#enum-heartbeatlevel) | Enum ng mga predefined na antas ng tibok (EMERGENCY, CRITICAL, WARNING, NORMAL) |
 
 </center>
 
@@ -24,7 +30,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ## 🏗️ Konstruktor
 
-### `MuntingTibok(int pin, HeartbeatLevel level)`
+### `Tibok(int pin, HeartbeatLevel level)`
 
 **Layunin:** Gumawa ng bagong `MuntingTibok` object.
 
