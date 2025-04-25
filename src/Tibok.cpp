@@ -18,11 +18,6 @@ void Tibok::update() {
     }
 }
 
-// Itinatakda ang bagong heartbeat level at ina-update ang tagal ng pagtikwas.
-void Tibok::setHeartbeat(HeartbeatLevel level) {
-    _level = level;
-}
-
 // Itinatakda ang estado ng pagtibok (enabled o disabled).
 void Tibok::enable(bool enabled) {
     _enabled = enabled;
@@ -34,6 +29,11 @@ void Tibok::setActiveHigh(bool activeHigh) {
     _activeHigh = activeHigh;
     // I-reset ang estado ng pin ayon sa bagong logic level
     digitalWrite(_pin, _state == _activeHigh ? HIGH : LOW);
+}
+
+// Itinatakda ang bagong heartbeat level at ina-update ang tagal ng pagtikwas.
+void Tibok::setHeartbeat(HeartbeatLevel level) {
+    _level = level;
 }
 
 // Kinukuha ang pin number ng status indicator.

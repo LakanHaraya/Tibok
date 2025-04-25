@@ -8,13 +8,13 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 <center>
 
-| API                               | Paggamit                                                              |
-| :--                               | :--                                                                   |
-| [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level) | Konstruktor – paglikha ng halimbagay ng `Tibok` class                    |
+| API | Paggamit |
+| :-- | :-- |
+| [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level-bool-activehigh--true-bool-enabled--true) | Konstruktor – paglikha ng halimbagay ng `Tibok` class                    |
 | [`update()`](#void-update)         | Isinasapanahon ang tibok, kailangang tawagin sa loob ng `loop()`        |
 | [`setHeartbeat(...)`](#void-setheartbeatheartbeatlevel-level) | Pinapalitan ang kasalukuyang antas ng tibok                            |
-| [`enable(...)`](#void-enablebool-enabled)       | Pinapagana o pinapahinto ang tibok                                     |
-| [`setActiveHigh(...)`](#void-setactivehighbool-activehigh)    | Itinatakda kung active HIGH o LOW ang output                            |
+| [`enable(...)`](#void-enablebool-enabled--true)       | Pinapagana o pinapahinto ang tibok                                     |
+| [`setActiveHigh(...)`](#void-setactivehighbool-activehigh) | Itinatakda kung active HIGH o LOW ang output                            |
 | [`getPin()`](#int-getpin-const)    | Ibinabalik ang GPIO pin na ginagamit para sa status indicator          |
 | [`getLabel()`](#string-getlabel-const) | Ibinabalik ang label na ginagamit para sa status indicator             |
 | [`isActiveHigh()`](#bool-isactivehigh-const) | Ibinabalik kung active HIGH o LOW ang output                           |
@@ -36,12 +36,12 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 <center>
 
-| Parameter | Uri | Paliwanag |
-|----------|-----|-----------|
-| `pin` | `int` | Arduino GPIO pin na kokontrolin |
-| `level` | `HeartbeatLevel` | Inisyal na tibok level (e.g., `NORMAL`, `CRITICAL`) |
-| `activeHigh` | `bool` | Kung `true`, active HIGH ang output. Kung `false`, active LOW (default: `true`) |
-| `enabled` | `bool` | Kung `true`, awtomatikong pinapalakas ang tibok (default: `true`) |
+| Parameter | Uri | Paliwanag | Default |
+|----------|-----|---|-----------|
+| `pin` | `int` | Arduino GPIO pin na kokontrolin | *Wala* |
+| `level` | `HeartbeatLevel` | Inisyal na antas ng tibok (e.g., `NORMAL`, `CRITICAL`, ... ) | *Wala* |
+| `activeHigh` | `bool` | Kung `true`, active HIGH ang output. <br> Kung `false`, active LOW. | `true` |
+| `enabled` | `bool` | Kung `true`, awtomatikong pinapagana ang tibok. <br> Kung `false`, hindi pagaganahin. | `true` |
 
 </center>
 
@@ -61,9 +61,9 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 <center>
 
-| Parameter | Uri | Paliwanag |
-|----------|-----|-----------|
-| `level` | `HeartbeatLevel` | Bagong tibok level | 
+| Parameter | Uri | Paliwanag | Mga Halagang Tinatanggap |
+|----------|-----|----|----|
+| `level` | `HeartbeatLevel` | Bagong antas ng tibok |  `EMERGENCY` <br> `CRITICAL` <br> `WARNING` <br> `NORMAL` |
 
 </center>
 
@@ -75,9 +75,9 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 <center>
 
-| Parameter | Uri | Paliwanag |
-|----------|-----|-----------|
-| `enabled` | `bool` | Kung `true`, pinapalakas ang tibok. Kung `false`, pinapahinto ito (default: `true`) |
+| Parameter | Uri | Paliwanag | Default |
+|----------|-----|---|--------|
+| `enabled` | `bool` | Kung `true`, pinapagana ang tibok. <br> Kung `false`, pinapahinto ito. | `true` |
 
 </center>
 
@@ -89,9 +89,9 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 <center>
 
-| Parameter | Uri | Paliwanag |
-|----------|-----|-----------|
-| `activeHigh` | `bool` | Kung `true`, active HIGH ang output. Kung `false`, active LOW |
+| Parameter | Uri | Paliwanag | Default |
+|----------|-----|----|-------|
+| `activeHigh` | `bool` | Kung `true`, active HIGH ang output. <br> Kung `false`, active LOW. | `true` |
 
 </center>
 
@@ -156,22 +156,37 @@ Predefined na tibok na mga delay (sa milliseconds):
 
 ---
 
-> ## 📝 Tandaan
->
-> - Ang `update()` ay *non-blocking*, kaya ligtas tawagin sa bawat `loop()`.
-> - Maaari mong gamitin ang `setHeartbeat()` kahit tumatakbo ang tibok.
-> - Ang `enable()` ay ginagamit para mag-enable o mag-disable ng tibok.
-> - Kung naka-`DISABLED`, walang LED toggling na magaganap.
+## 🧠 Mga Paalala sa Paggamit
+Ilang mahahalagang detalye ukol sa maayos at inaasahang paggamit ng `Tibok` library.
+
+### 🕒 Timing at Update Loop
+- Ang `update()` ay *non-blocking*, kaya ligtas itong tawagin sa bawat `loop()` cycle.
+- Iwasan ang `delay()` sa loob ng `loop()` kung ginagamit ang `update()`. Maaaring magdulot ito ng hindi pantay o nabibinbing tibok.
+- Iminumungkahi ang paggamit ng `millis()`-*based logic* para sa ibang bahagi ng iyong sketch upang hindi makaapekto sa tibok.
+
+### ⚙️ Dynamic Configuration
+- Ligtas gamitin ang mga setter gaya ng `setHeartbeat()`, `setActiveHigh()`, at `enable()` kahit habang tumatakbo ang tibok.
+- Maaari mong baguhin ang antas ng tibok anumang oras ayon sa pangangailangan ng sistema.
+
+### ⚡ Pin Control
+- Siguraduhing hindi ginagamit ng ibang bahagi ng programa ang GPIO pin na ibinigay sa konstruktor.
+- Tiyaking ang configuration ng hardware (*pull-up/pull-down*) ay tumutugma sa `activeHigh` setting:
+
+    - Gumamit ng `activeHigh = true` kung may *pull-down resistor*.
+    - Gumamit ng `activeHigh = false` kung may *pull-up resistor*.
+
+### 🔍 Estado at Debugging
+- Magagamit ang `isEnabled()`, `getState()`, at `getLastToggle()` upang suriin ang kasalukuyang estado ng tibok para sa mga lohikal na desisyon.
+- Magagamit ang `getHeartbeat()` at `getLabel()` para sa status reporting o user interface.
+
+### 🧱 Inisyalisasyon
+- Tiyaking tama ang pagkatawag ng konstruktor sa `setup()` o *global scope*.
+- Sa kasalukuyang bersiyon, walang `begin()` method – lahat ng inisyal na setup ay ginagawa sa konstruktor pa lamang.
 
 ---
 
 ## 📂 Kaugnay na File
 
-- `src/MuntingTibok.h` – Ang mga deklarasyon ng API [dito](../src/MuntingTibok.h).
-- `src/MuntingTibok.cpp` – Ang mga implementasyon ng API [dito](../src/MuntingTibok.cpp).
-
----
-
-## 🧪 Tingnan din
-
-Para sa aktuwal na paggamit ng API na ito, tingnan ang `examples/` folder [dito](../examples/).
+- `src/Tibok.h` – Ang mga deklarasyon ng API [dito](../src/Tibok.h).
+- `src/Tibok.cpp` – Ang mga implementasyon ng API [dito](../src/Tibok.cpp).
+- `examples/` – Mga halimbawa para sa aktuwal na paggamit ng API [dito](../examples/).
