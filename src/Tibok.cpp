@@ -1,24 +1,12 @@
 #include "Tibok.h"
 
-/**
- * @brief Konstruktor para sa Tibok class.
- * 
- * @param pin GPIO pin number kung saan nakakabit ang status indicator.
- * @param level Ang paunang antas ng pagtibok (heartbeat level).
- * @param activeHigh Tinutukoy kung active HIGH o LOW ang output (default: `true`).
- * @param enabled Kung awtomatikong papaganahin ang pagtibok (default: `true`).
- */
+// Konstruktor ng Tibok class na tumatanggap ng pin number, heartbeat level, active HIGH/LOW flag, at enabled flag.
 Tibok::Tibok(int pin, HeartbeatLevel level, bool activeHigh, bool enabled) : _pin(pin), _level(level), _lastToggle(0), _state(false), _activeHigh(activeHigh), _enabled(enabled) {
     pinMode(_pin, OUTPUT);                          // Itinatakda ang pin bilang output
     digitalWrite(_pin,(_enabled && _state == _activeHigh) ? HIGH : LOW);   // Itinatakda ang default state
 }
 
-/**
- * @brief Pinapatakbo ang alert logic batay sa napiling heartbeat level.
- * 
- * Kapag lampas na sa itinakdang tagal ng level, magtitikwas ang estado at
- * ipapakita sa status indicator.
- */
+// I-update ang estado ng status indicator batay sa kasalukuyang antas ng pagtibok (dapat ilagay sa loob ng `loop()`).
 void Tibok::update() {
     if (!_enabled) return;
 
@@ -30,56 +18,66 @@ void Tibok::update() {
     }
 }
 
+// Itinatakda ang bagong heartbeat level at ina-update ang tagal ng pagtikwas.
 void Tibok::setHeartbeat(HeartbeatLevel level) {
     _level = level;
 }
 
-void Tibok::disable() {
-    _enabled = false;
-    digitalWrite(_pin, _activeHigh ? LOW : HIGH);
+// Itinatakda ang estado ng pagtibok (enabled o disabled).
+void Tibok::enable(bool enabled) {
+    _enabled = enabled;
+    digitalWrite(_pin, _enabled && _state == _activeHigh ? HIGH : LOW); // I-reset ang estado ng pin ayon sa bagong logic level
 }
 
-void Tibok::enable() {
-    _enabled = true;
-}
-
+// Itinatakda ang estado ng active HIGH o active LOW.
 void Tibok::setActiveHigh(bool activeHigh) {
     _activeHigh = activeHigh;
     // I-reset ang estado ng pin ayon sa bagong logic level
     digitalWrite(_pin, _state == _activeHigh ? HIGH : LOW);
 }
 
+// Kinukuha ang pin number ng status indicator.
 int Tibok::getPin() const {
     return _pin;
 }
 
-String Tibok::getHeartbeat() const {
+// Kinukuha ang label ng kasalukuyang Heartbeat level.
+String Tibok::getLabel() const {
     switch (_level) {
         case EMERGENCY:
-            return String("KAGIPITAN (125ms bawat tibok)");
+            return String("KAGIPITAN");
         case CRITICAL:
-            return String("KRITIKAL (250ms bawat tibok)");
+            return String("KRITIKAL");
         case WARNING:
-            return String("BABALA (500ms bawat tibok)");
+            return String("BABALA");
         case NORMAL:
-            return String("NORMAL (1000ms bawat tibok)");
+            return String("NORMAL");
         default:
-            return String("HINDI TINAKDA (hindi wastong antas)");
+            return String("HINDI TINAKDA");
     }
 }
 
+// Kinukuha ang estado ng active HIGH o active LOW.
 bool Tibok::isActiveHigh() const {
     return _activeHigh;
 }
 
+// Kinukuha ang estado ng pagtibok (enabled o disabled).
 bool Tibok::isEnabled() const {
     return _enabled;
 }
 
+// Kinukuha ang kasalukuyang estado ng status indicator.
 bool Tibok::getState() const {
     return _state;
 }
 
+// Kinukuha ang huling tagal ng pagtikwas ng status indicator.
 unsigned long Tibok::getLastToggle() const {
     return _lastToggle;
+}
+
+// Kinukuha ang numerical value ng napiling Heartbeat level.
+unsigned long Tibok::getHeartbeat() const {
+    return static_cast<unsigned long>(_level);
 }
