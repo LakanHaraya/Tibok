@@ -1,4 +1,4 @@
-# 📘 `MuntingTibok/` – *API Reference*
+# 📘 `Tibok/` – *API Reference*
 
 Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Interface) ng aklatan ng **MuntingTibok**.
 
