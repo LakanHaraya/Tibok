@@ -13,12 +13,10 @@
 #include <Arduino.h>
 #include <Tibok.h>
 
-// LED na may NORMAL tibok (1000ms)
-Tibok heartLED(13, NORMAL);
+// LED na may CRITICAL tibok (1000ms)
+Tibok heartLED(13, CRITICAL);
 
 void setup() {
-    // Simulan ang heartbeat (Active HIGH default)
-    heartLED.begin();
 }
 
 void loop() {
@@ -30,7 +28,7 @@ void loop() {
         static bool isOn = true;
 
         if (isOn) {
-            heartLED.disable();  // Patigilin ang tibok
+            heartLED.enable(false);  // Patigilin ang tibok
         } else {
             heartLED.enable();   // Ibalik ang tibok
         }

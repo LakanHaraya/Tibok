@@ -18,8 +18,6 @@
 Tibok statusLED(13, NORMAL);
 
 void setup() {
-    // Simulan ang heartbeat (Active HIGH default)
-    statusLED.begin();
 }
 
 void loop() {
@@ -29,7 +27,7 @@ void loop() {
     // Palitan ang tibok tuwing 5 segundo
     if (now - lastChange > 5000) {
         static bool toggle = false;
-        statusLED.setLevel(toggle ? EMERGENCY : WARNING);
+        statusLED.setHeartbeat(toggle ? EMERGENCY : WARNING);
         toggle = !toggle;
         lastChange = now;
     }
