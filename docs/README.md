@@ -48,7 +48,7 @@ iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay s
 
 - [INSTALLATION.md](../docs/INSTALLATION.md)
 - [API_REFERENCE.md](../docs/API_REFERENCE.md)
-- [CHANGELOG](../docs/CHANGELOG)
+- [CHANGELOG.md](../docs/CHANGELOG.md)
 
 ---
 
