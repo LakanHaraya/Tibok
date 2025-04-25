@@ -9,13 +9,12 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 ## [Unreleased] - 2025-04-25
 
 ### Idinagdag
-- Idinagdag ang mga bagong getter method: `getPin()`, `isActiveHigh()`, `isEnabled()`, `getState()`, at `getLastToggle()`.
+- Idinagdag ang mga bagong getter method: `getPin()`, `isActiveHigh()`, `isEnabled()`, `getState()`, `getLastToggle()`, at `getHeartbeat`.
 - Dinagdagan ng parameter ang `enable()` para suportahan ang disable.
 - Dinagdagan ng parameter ang `Tibok` para suportahan ang `level`, `activeHigh`, at `enabled`, kasama ang mga default value nito.
 
 ### Pinalitan
 - Pinalitan ang pangalan ng buong library bilang `Tibok`
-- Pinalitan ang lumang `getHeartbeat()` ng bagong `getLabel()` para makuha ang pangalan (tatak) ng heartbeat level.
 - Pinalitan ang tawag sa `setLevel` at ginawang `setHeartbeat()`.
 
 ### Tinanggal
