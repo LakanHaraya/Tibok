@@ -1,8 +1,8 @@
-# 📖 `Tibok/` v1.1.0
+# 📖 `Tibok/` Unreleased
 
 📜 *Malapamantayan:* **LNDH-0051** *(Aktibo)*  
 📅 *Petsa ng Paglalathala:* **2025-04-11**  
-🔢 *Bersiyon:* **v1.1.0** *(Balangkas)*  
+🔢 *Bersiyon:* **[Unreleased]** *(Balangkas)*  
 🛠️ *Huling Rebisyon:* **2025-04-25**  
 👨‍💻 *May-akda:* **Lakan Haraya Dima**  
 
