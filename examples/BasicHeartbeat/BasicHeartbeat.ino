@@ -17,8 +17,6 @@
 Tibok tibok(13, NORMAL);
 
 void setup() {
-    // Simulan ang tibok gamit ang default na active HIGH logic
-    tibok.begin();
 }
 
 void loop() {
