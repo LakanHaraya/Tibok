@@ -1,28 +1,45 @@
 # 📘 `Tibok/` – *API Reference*
 
-Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Interface) ng aklatan ng **MuntingTibok**.
+Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Interface) ng aklatan ng **Tibok**.
 
 ---
 
-## Talaan ng API
+## 📘 Talaan ng API
 
 <center>
 
+### 🔧 Konstruksiyon
 | API | Paggamit |
 | :-- | :-- |
-| [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level-bool-activehigh--true-bool-enabled--true) | Konstruktor – paglikha ng halimbagay ng `Tibok` class                    |
-| [`update()`](#void-update)         | Isinasapanahon ang tibok, kailangang tawagin sa loob ng `loop()`        |
-| [`setHeartbeat(...)`](#void-setheartbeatheartbeatlevel-level) | Pinapalitan ang kasalukuyang antas ng tibok                            |
-| [`enable(...)`](#void-enablebool-enabled--true)       | Pinapagana o pinapahinto ang tibok                                     |
-| [`setActiveHigh(...)`](#void-setactivehighbool-activehigh) | Itinatakda kung active HIGH o LOW ang output                            |
-| [`getPin()`](#int-getpin-const)    | Ibinabalik ang GPIO pin na ginagamit para sa status indicator          |
-| [`getLabel()`](#string-getlabel-const) | Ibinabalik ang label na ginagamit para sa status indicator             |
-| [`isActiveHigh()`](#bool-isactivehigh-const) | Ibinabalik kung active HIGH o LOW ang output                           |
-| [`isEnabled()`](#bool-isenabled-const) | Ibinabalik kung ang tibok ay pinagana o hindi                          |
-| [`getState()`](#bool-getstate-const) | Ibinabalik ang kasalukuyang estado ng status indicator                 |
-| [`getLastToggle()`](#unsigned-long-getlasttoggle-const) | Ibinabalik ang huling oras ng pagtibok (millis)                         |
-| [`getHeartbeat()`](#unsigned-long-getheartbeat-const) | Ibinabalik ang kasalukuyang tibok interval bilang millis               |
-| [`EMERGENCY`](#enum-heartbeatlevel) <br> [`CRITICAL`](#enum-heartbeatlevel) <br> [`WARNING`](#enum-heartbeatlevel) <br> [`NORMAL`](#enum-heartbeatlevel) | Mga constant ng enum `HeartbeatLevel` para sa antas ng tibok |
+| [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level--normal-bool-activehigh--true-bool-enabled--true) | Konstruktor – paglikha ng halimbagay ng `Tibok` class |
+
+### ⚙️ Kontrol at Operasyon
+| API | Paggamit |
+| :-- | :-- |
+| [`update()`](#void-update) | Isinasapanahon ang tibok; kailangang tawagin sa loob ng `loop()` |
+| [`enable(...)`](#void-enablebool-enabled--true) | Pinapagana o pinapahinto ang tibok |
+
+### 🔄 Kumpigurasyon
+| API | Paggamit |
+| :-- | :-- |
+| [`setHeartbeat(...)`](#void-setheartbeatheartbeatlevel-level) | Pinapalitan ang kasalukuyang antas ng tibok |
+| [`setActiveHigh(...)`](#void-setactivehighbool-activehigh) | Itinatakda kung active HIGH o LOW ang output logic |
+
+### 📊 Pagkuha ng Datos
+| API | Paggamit |
+| :-- | :-- |
+| [`getPin()`](#int-getpin-const) | Ibinabalik ang GPIO pin na ginagamit para sa status indicator |
+| [`getLabel()`](#string-getlabel-const) | Ibinabalik ang label na ginagamit para sa status indicator |
+| [`getHeartbeat()`](#unsigned-long-getheartbeat-const) | Ibinabalik ang kasalukuyang tibok interval (sa `millis`) |
+| [`getState()`](#bool-getstate-const) | Ibinabalik ang kasalukuyang estado ng status indicator |
+| [`getLastToggle()`](#unsigned-long-getlasttoggle-const) | Ibinabalik ang huling oras ng pagtibok (millis) |
+| [`isActiveHigh()`](#bool-isactivehigh-const) | Ibinabalik kung active HIGH o LOW ang output |
+| [`isEnabled()`](#bool-isenabled-const) | Ibinabalik kung ang tibok ay pinagana o hindi |
+
+### 📦 Mga Konstant
+| API | Paggamit |
+| :-- | :-- |
+| [`EMERGENCY`](#enum-heartbeatlevel) <br> [`CRITICAL`](#enum-heartbeatlevel) <br> [`WARNING`](#enum-heartbeatlevel) <br> [`NORMAL`](#enum-heartbeatlevel) | Mga konstant ng enum `HeartbeatLevel` para sa antas ng tibok |
 
 </center>
 
@@ -30,16 +47,17 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ## 🏗️ Konstruktor
 
-### `Tibok(int pin, HeartbeatLevel level, bool activeHigh = true, bool enabled = true)`
+### `Tibok(int pin, HeartbeatLevel level = NORMAL, bool activeHigh = true, bool enabled = true)`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L3-L7)  
 **Layunin:** Gumawa ng bagong `Tibok` object.
 
 <center>
 
 | Parameter | Uri | Paliwanag | Default |
 |----------|-----|---|-----------|
-| `pin` | `int` | Arduino GPIO pin na kokontrolin | *Wala* |
-| `level` | `HeartbeatLevel` | Inisyal na antas ng tibok (e.g., `NORMAL`, `CRITICAL`, ... ) | *Wala* |
+| `pin` | `int` | GPIO pin na kokontrolin | *Wala* |
+| `level` | `HeartbeatLevel` | Inisyal na antas ng tibok (tingnan ang mga [konstant](#enum-heartbeatlevel)) | `NORMAL` |
 | `activeHigh` | `bool` | Kung `true`, active HIGH ang output. <br> Kung `false`, active LOW. | `true` |
 | `enabled` | `bool` | Kung `true`, awtomatikong pinapagana ang tibok. <br> Kung `false`, hindi pagaganahin. | `true` |
 
@@ -47,30 +65,18 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
-## ⚙️ Mga Metodo
+## ⚙️ Kontrol at Operasyon
 
 ### `void update()`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L9-L19)  
 **Layunin:** Panatilihing tumitibok ang output. Dapat itong tawagin sa loob ng `loop()` function ng sketch.
-
----
-
-### `void setHeartbeat(HeartbeatLevel level)`
-
-**Layunin:** Palitan ang kasalukuyang tibok interval.
-
-<center>
-
-| Parameter | Uri | Paliwanag | Mga Halagang Tinatanggap |
-|----------|-----|----|----|
-| `level` | `HeartbeatLevel` | Bagong antas ng tibok |  `EMERGENCY` <br> `CRITICAL` <br> `WARNING` <br> `NORMAL` |
-
-</center>
 
 ---
 
 ### `void enable(bool enabled = true)`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L21-L25)  
 **Layunin:** Pinapagana o pinapahinto ang tibok ng status indicator.
 
 <center>
@@ -83,8 +89,26 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
+## 🔄 Kumpigurasyon
+
+### `void setHeartbeat(HeartbeatLevel level)`
+
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L34-L37)  
+**Layunin:** Palitan ang kasalukuyang tibok interval.
+
+<center>
+
+| Parameter | Uri | Paliwanag | Mga Halagang Tinatanggap |
+|----------|-----|----|----|
+| `level` | `HeartbeatLevel` | Bagong antas ng tibok. <br> [tingnan](#enum-heartbeatlevel) |  `EMERGENCY` <br> `CRITICAL` <br> `WARNING` <br> `NORMAL` |
+
+</center>
+
+---
+
 ### `void setActiveHigh(bool activeHigh)`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L27-L32)  
 **Layunin:** Itinatakda kung active HIGH o LOW ang output.
 
 <center>
@@ -97,50 +121,62 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
+## 📊 Pagkuha ng Datos
+
 ### `int getPin() const`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L39-L42)  
 **Layunin:** Ibinabalik ang GPIO pin na ginagamit para sa status indicator.
 
 ---
 
 ### `String getLabel() const`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L44-L58)  
 **Layunin:** Ibinabalik ang label na ginagamit para sa status indicator. Halimbawa, maaari itong gamitin para sa pag-debug o pagpapakita ng impormasyon tungkol sa tibok.
 
 ---
 
-### `bool isActiveHigh() const`
+### `unsigned long getHeartbeat() const`
 
-**Layunin:** Ibinabalik kung active HIGH o LOW ang output.
-
----
-
-### `bool isEnabled() const`
-
-**Layunin:** Ibinabalik kung ang tibok ay pinagana o hindi.
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L80-L83)  
+**Layunin:** Ibinabalik ang kasalukuyang tibok interval sa milliseconds.
 
 ---
 
 ### `bool getState() const`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L70-L73)  
 **Layunin:** Ibinabalik ang kasalukuyang estado ng status indicator (HIGH o LOW).
 
 ---
 
 ### `unsigned long getLastToggle() const`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L75-L78)  
 **Layunin:** Ibinabalik ang huling oras ng pagtibok sa milliseconds mula nang ito ay na-enable.
 
 ---
 
-### `unsigned long getHeartbeat() const`
+### `bool isActiveHigh() const`
 
-**Layunin:** Ibinabalik ang kasalukuyang tibok interval sa milliseconds.
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L60-L63)  
+**Layunin:** Ibinabalik kung active HIGH o LOW ang output.
 
 ---
 
-## Enum: `HeartbeatLevel`
+### `bool isEnabled() const`
 
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.cpp#L65-L68)  
+**Layunin:** Ibinabalik kung ang tibok ay pinagana o hindi.
+
+---
+
+## 📦 Mga Konstant
+
+### Enum: `HeartbeatLevel`
+
+📜[[batis]](https://github.com/LakanHaraya/Tibok/blob/0c3b89ac9657f8d63710ea52d2e2ca60b00f7c9e/src/Tibok.h#L5-L10)  
 Predefined na tibok na mga delay (sa milliseconds):
 
 <center>

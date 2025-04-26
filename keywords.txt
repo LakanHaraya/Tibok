@@ -1,0 +1,23 @@
+####################################
+# Tibok Library Keywords
+####################################
+
+Tibok           KEYWORD1
+HeartbeatLevel  KEYWORD1
+
+update          KEYWORD2
+enable          KEYWORD2
+setActiveHigh   KEYWORD2
+setHeartbeat    KEYWORD2
+getPin          KEYWORD2
+getLabel        KEYWORD2
+isActiveHigh    KEYWORD2
+isEnabled       KEYWORD2
+getState        KEYWORD2
+getLastToggle   KEYWORD2
+getHeartbeat    KEYWORD2
+
+EMERGENCY       LITERAL1
+CRITICAL        LITERAL1
+WARNING         LITERAL1
+NORMAL          LITERAL1

@@ -12,6 +12,7 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 - Idinagdag ang mga bagong getter method: `getPin()`, `isActiveHigh()`, `isEnabled()`, `getState()`, `getLastToggle()`, at `getHeartbeat`.
 - Dinagdagan ng parameter ang `enable()` para suportahan ang disable.
 - Dinagdagan ng parameter ang `Tibok` para suportahan ang `level`, `activeHigh`, at `enabled`, kasama ang mga default value nito.
+- Hinahanda para suportahan ang Arduino Library Manager.
 
 ### Pinalitan
 - Pinalitan ang pangalan ng buong library bilang `Tibok`
