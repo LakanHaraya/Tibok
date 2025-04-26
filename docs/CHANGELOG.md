@@ -6,7 +6,7 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
-## [Unreleased] - 2025-04-25
+## [Unreleased]
 
 ### Idinagdag
 - Idinagdag ang mga bagong getter method: `getPin()`, `isActiveHigh()`, `isEnabled()`, `getState()`, `getLastToggle()`, at `getHeartbeat`.
@@ -27,7 +27,7 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
-## [1.0.0] - 2025-04-11
+## [0.1.0] - 2025-04-11
 
 ### Idinagdag
 
