@@ -33,9 +33,9 @@ class Tibok {
         void update();
 
         // Panakda
-        void enable(bool enabled = true);
-        void setActiveHigh(bool activeHigh);
-        void setHeartbeat(HeartbeatLevel level);
+        Tibok& enable(bool enabled = true);
+        Tibok& activeHigh(bool activeHigh = true);
+        Tibok& heartbeat(HeartbeatLevel level = NORMAL);
 
         // Panguha
         int getPin() const;

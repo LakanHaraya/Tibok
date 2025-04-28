@@ -1,10 +1,9 @@
 # 📖 `Tibok/` Unreleased
 ![Release](https://img.shields.io/github/v/release/LakanHaraya/Tibok?include_prereleases)
+![Malapamantayan](https://img.shields.io/badge/malapamantayan-LNDH--0051-purple)
 
-📜 *Malapamantayan:* **LNDH-0051** *(Aktibo)*  
-📅 *Petsa ng Paglalathala:* **2025-04-11**  
-🔢 *Bersiyon:* **[Unreleased]** *(Balangkas)*  
-🛠️ *Huling Rebisyon:* **2025-04-25**  
+📅 *Petsa ng Paglalathala:* **2025-04-11**   
+🛠️ *Huling Rebisyon:* **2025-04-28**  
 👨‍💻 *May-akda:* **Lakan Haraya Dima**  
 
 Ang **Tibok** ay isang magaan at mumunting aklatan para sa
@@ -55,15 +54,16 @@ iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay s
 
 ## Mga Halimbawa
 
-Tingnan ang [`examples/`](../examples/) folder para sa mga sumusunod na sketch
+Tingnan ang [`examples/`](examples/) folder para sa mga sumusunod na sketch.
 
-- [`ActiveLowHighHeartbeat.ino`](../examples/ActiveLowHighHeartbeat/) – Aktibong LOW at aktibong HIGH na signal
-- [`BasicHeartbeat.ino`](../examples/BasicHeartbeat/) – Simpleng tibok
-- [`GetStateChange.ino`](../examples/GetStateChange/) – Subaybayan ang estado ng indikador at ipakita ang mga pagbabago sa estado nito.
-- [`TibokGetters`](../examples/TibokGetters/) – Kunin ang mga iba't ibang impormasyon tungkol sa status indicator
-- [`ConstructorDemo`](../examples/ConstructorDemo/) – Iba't ibang paraan ng paggamit ng constructor gamit ang magkakaibang bilang ng argumento.
-- [`DynamicHeartbeat`](../examples/DynamicHeartbeat/) – Pagpapalit ng tibok sa runtime
-- [`EnableDisable`](../examples/EnableDisable/) – Pagtikwas ng tibok
+- [`ActiveLowHighHeartbeat.ino`](examples/ActiveLowHighHeartbeat/) – Aktibong LOW at aktibong HIGH na signal
+- [`BasicHeartbeat.ino`](examples/BasicHeartbeat/) – Simpleng tibok
+- [`WithChainedMethods.ino`](examples/ChainingMethods/) – Paggamit ng chaining method
+- [`GetStateChange.ino`](examples/GetStateChange/) – Subaybayan ang estado ng indikador at ipakita ang mga pagbabago sa estado nito.
+- [`TibokGetters.ino`](examples/TibokGetters/) – Kunin ang mga iba't ibang impormasyon tungkol sa status indicator
+- [`ConstructorDemo.ino`](examples/ConstructorDemo/) – Iba't ibang paraan ng paggamit ng constructor gamit ang magkakaibang bilang ng argumento.
+- [`DynamicHeartbeat.ino`](examples/DynamicHeartbeat/) – Pagpapalit ng tibok sa runtime
+- [`EnableDisable.ino`](examples/EnableDisable/) – Pagtikwas ng tibok
 
 > ### Testing
 > 1. I-upload ang isa sa mga halimbawa sa iyong board.
@@ -73,4 +73,4 @@ Tingnan ang [`examples/`](../examples/) folder para sa mga sumusunod na sketch
 
 ## Lisensiya
 
-Ang **MuntingTibok** ay inilabas sa ilalim ng [MIT License](LICENSE)
+Ang **Tibok** ay inilabas sa ilalim ng [MIT License](LICENSE)

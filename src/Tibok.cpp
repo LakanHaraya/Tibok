@@ -19,21 +19,24 @@ void Tibok::update() {
 }
 
 // Itinatakda ang estado ng pagtibok (enabled o disabled).
-void Tibok::enable(bool enabled) {
+Tibok& Tibok::enable(bool enabled) {
     _enabled = enabled;
     digitalWrite(_pin, _enabled && _state == _activeHigh ? HIGH : LOW); // I-reset ang estado ng pin ayon sa bagong logic level
+    return *this; // Ibalik ang kasalukuyang object para sa chaining
 }
 
 // Itinatakda ang estado ng active HIGH o active LOW.
-void Tibok::setActiveHigh(bool activeHigh) {
+Tibok& Tibok::activeHigh(bool activeHigh) {
     _activeHigh = activeHigh;
     // I-reset ang estado ng pin ayon sa bagong logic level
     digitalWrite(_pin, _state == _activeHigh ? HIGH : LOW);
+    return *this; // Ibalik ang kasalukuyang object para sa chaining
 }
 
 // Itinatakda ang bagong heartbeat level at ina-update ang tagal ng pagtikwas.
-void Tibok::setHeartbeat(HeartbeatLevel level) {
+Tibok& Tibok::heartbeat(HeartbeatLevel level) {
     _level = level;
+    return *this; // Ibalik ang kasalukuyang object para sa chaining
 }
 
 // Kinukuha ang pin number ng status indicator.

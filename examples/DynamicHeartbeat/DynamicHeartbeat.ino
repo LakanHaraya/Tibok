@@ -1,11 +1,11 @@
 /*
   DynamicHeartbeat.ino
-  Pagpapalit ng tibok sa runtime gamit ang setLevel() method.
+  Pagpapalit ng tibok sa runtime gamit ang `heartbeat()` method.
 
   Ipinapakita sa sketch na ito kung paano pabagu-baguhin ang tibok ng LED
   batay sa kondisyon o takdang oras. Sa kasong ito, nagpapalit ng antas ng
   tibok kada 5 segundo sa pagitan ng EMERGENCY (125ms) at WARNING (500ms)
-  gamit ang `setLevel()` function.
+  gamit ang `heartbeat()` function.
 
   Author: Lakan Haraya Dima
   Date: 2025-04-11
@@ -27,7 +27,7 @@ void loop() {
     // Palitan ang tibok tuwing 5 segundo
     if (now - lastChange > 5000) {
         static bool toggle = false;
-        statusLED.setHeartbeat(toggle ? EMERGENCY : WARNING);
+        statusLED.heartbeat(toggle ? EMERGENCY : WARNING);
         toggle = !toggle;
         lastChange = now;
     }

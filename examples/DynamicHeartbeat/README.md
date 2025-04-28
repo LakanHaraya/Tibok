@@ -1,6 +1,6 @@
 # DynamicHeartbeat Demo
 
-Ang sketch na ito ay nagpapakita ng paggamit ng `Tibok` library upang **dynamically** na mabago ang tibok o blinking pattern ng isang status LED **habang tumatakbo ang system**, gamit ang `setHeartbeat()` method.
+Ang sketch na ito ay nagpapakita ng paggamit ng `Tibok/` library upang **dynamically** na mabago ang tibok o blinking pattern ng isang status LED **habang tumatakbo ang system**, gamit ang `heartbeat()` method.
 
 ### Paano Gumagana ang Sketch?
 
@@ -12,9 +12,9 @@ Ang sketch na ito ay nagpapakita ng paggamit ng `Tibok` library upang **dynamica
 
 ### Layunin ng Demo
 
-Ipamalas ang kakayahan ng `Tibok` library na:
+Ipamalas ang kakayahan ng `Tibok/` library na:
 - Magpalit ng heartbeat pattern **sa runtime**
-- Gamitin ang `setHeartbeat()` upang **tumugon sa mga kondisyon ng system**, gaya ng pagbabago ng alert levels o system states
+- Gamitin ang `heartbeat()` upang **tumugon sa mga kondisyon ng system**, gaya ng pagbabago ng alert levels o system states
 
 ### Paano Gamitin:
 
@@ -24,7 +24,7 @@ Ipamalas ang kakayahan ng `Tibok` library na:
 ### Mga Detalye ng Sketch:
 
 - **`Tibok statusLED(13, NORMAL)`**: Nagsisimula sa `NORMAL` level, ngunit pinapalitan sa `loop()`.
-- **`setHeartbeat()`**: Method na ginagamit upang baguhin ang tibok batay sa kondisyon.
+- **`heartbeat()`**: Method na ginagamit upang baguhin ang tibok batay sa kondisyon.
 - **`update()`**: Tinatawag sa bawat `loop()` cycle upang ipatupad ang kasalukuyang tibok.
 
 ### Output:
