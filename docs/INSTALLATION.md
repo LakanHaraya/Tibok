@@ -16,35 +16,44 @@ Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, maga
 
 ### Paraan 1: *Paggamit ng Arduino IDE (Manually)*
 
-Dahil hindi pa available ang `Tibok/` library sa Arduino Library Manager, kinakailangang manu-manong i-install ito. Sundin ang mga hakbang na ito:
+#### Hakbang 1: I-download ang Library
 
-1. **I-download ang Library**  
-   I-download ang `Tibok/` library zip file mula sa [Tibok Repository](https://github.com/LakanHaraya/Tibok.git).
+- Bisitahin ang **GitHub repository** ng library [dito](https://github.com/LakanHaraya/Tibok.git).
 
-2. **Buksan ang Arduino IDE**  
-   I-launch ang Arduino IDE sa iyong computer.
+- I-click ang **Download ZIP** na button upang i-download ang `.zip` file ng library.
 
-3. **Magdagdag ng Library**  
-   - Pumunta sa `Sketch` menu at piliin ang `Include Library` > `Add .ZIP Library...`.
-   - Hanapin ang na-download na `Tibok` zip file at piliin ito.
-   
-    >   Matapos itong gawin, awtomatikong madadagdag ang library sa iyong Arduino IDE.
+#### Hakbang 2: Buksan ang Arduino IDE
 
-4. **I-verify ang Pagkakasunod ng Installation**  
-   - Pumunta sa `Sketch` > `Include Library` at hanapin ang `Tibok` sa listahan ng mga available na library.  
-   - Kung makikita mo ito, matagumpay na itong na-install.
+- Buksan ang iyong **Arduino IDE** sa iyong computer.
+
+#### Hakbang 3: Magdagdag ng Library
+- Pumunta sa `Sketch` menu.
+
+- Piliin ang `Include Library` > `Add .ZIP Library...`.
+
+- Hanapin ang na-download na `.zip` file ng library mula sa iyong file explorer at piliin ito.
+
+- Awtomatikong idaragdag ng Arduino IDE ang library at makikita mo ito sa `Sketch` > `Include Library` menu.
+
+#### Hakbang 4: I-verify ang Pagkakasunod ng Installation
+- Pumunta sa `Sketch` > `Include Library`.
+
+- Hanapin ang pangalan ng `Tibok` library. 
+
+- Kung nakita mo ito sa listahan ng mga available na libraries, matagumpay na itong na-install.
 
 ### Paraan 2: *Paggamit ng PlatformIO*
 
-1. **I-install ang PlatformIO**  
+- **I-install ang PlatformIO**  
    Kung wala ka pang PlatformIO, i-install ito mula sa [PlatformIO website](https://platformio.org/) o gamit ang Visual Studio Code.
 
-2. **I-clone ang Repository**  
+- **I-clone ang Repository**  
    Buksan ang terminal at i-clone ang repository gamit ang git:
    ```bash
    git clone https://github.com/LakanHaraya/Tibok.git
+   ```
 
-3. **Idagdag ang Library sa PlatformIO Project**
+- **Idagdag ang Library sa PlatformIO Project**
 
    - Buksan ang iyong PlatformIO project.
 
@@ -73,22 +82,31 @@ Kung nais mong tanggalin ang library mula sa:
 
 ### Arduino IDE *(Manually)*:
 
-1. **Buksan ang Arduino IDE**
-I-launch ang Arduino IDE sa iyong computer.
+#### Hakbang 1: Hanapin ang Folder ng Library
+- Pumunta sa iyong **Arduino libraries folder**:
 
-2. **Pumunta sa Library Folder**
+   - **Windows:** `Documents/Arduino/libraries/`
 
-   - Pumunta sa `Sketch` > `Include Library` > `Manage Libraries...`.
+   - **macOS:** `~/Documents/Arduino/libraries/`
 
-   - Hanapin ang folder ng library sa pamamagitan ng `Sketch` > `Show Sketch Folder`.
+   - **Linux:** `~/Arduino/libraries/`
 
-   Ang iyong mga library ay matatagpuan sa `libraries/` directory ng Arduino IDE.
+- Sa folder na `libraries/`, hanapin ang `Tibok` library.
 
-3. **Tanggalin ang Library Folder**
+#### Hakbang 2: Tanggalin ang Library
+- Kapag nakita mo na ang folder ng library, **i-delete** ito.
 
-   - Sa loob ng `libraries/` folder, hanapin ang folder na pinangalanang `Tibok` (ito ang folder na naglalaman ng mga source code ng library).
+   - I-right-click ang folder ng library at piliin ang **Delete** o **Move to Trash** (depende sa iyong operating system).
 
-   - I-delete ang `Tibok` folder upang alisin ang library.
+#### Hakbang 3: I-restart ang Arduino IDE
+- Pagkatapos tanggalin ang folder ng library, **i-restart ang Arduino IDE** upang matanggal ang library mula sa IDE.
+
+#### Hakbang 4: I-verify ang Uninstallation
+- Pumunta sa `Sketch` > `Include Library`.
+
+- I-check kung wala nang entry para sa `Tibok` library.
+
+- Kung hindi mo na ito makita sa listahan ng mga library, matagumpay na itong na-uninstall.
 
 ### PlatformIO:
 
