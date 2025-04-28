@@ -1,4 +1,5 @@
 # 📖 `Tibok/` Unreleased
+![Release](https://img.shields.io/github/v/release/LakanHaraya/Tibok?include_prereleases)
 
 📜 *Malapamantayan:* **LNDH-0051** *(Aktibo)*  
 📅 *Petsa ng Paglalathala:* **2025-04-11**  
