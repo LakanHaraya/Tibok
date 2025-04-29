@@ -8,26 +8,13 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 <center>
 
-### 🔧 Konstruksiyon
 | API | Paggamit |
 | :-- | :-- |
-| [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level--normal-bool-activehigh--true-bool-enabled--true) | Konstruktor – paglikha ng halimbagay ng `Tibok` class |
-
-### ⚙️ Kontrol at Operasyon
-| API | Paggamit |
-| :-- | :-- |
+| [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level--normal-bool-activehigh--true-bool-enabled--true) | Konstruktor – paglikha ng halimbagay ng `Tibok` class | 
 | [`update()`](#void-update) | Isinasapanahon ang tibok; kailangang tawagin sa loob ng `loop()` |
 | [`enable(...)`](#void-enablebool-enabled--true) | Pinapagana o pinapahinto ang tibok |
-
-### 🔄 Kumpigurasyon
-| API | Paggamit |
-| :-- | :-- |
-| [`setHeartbeat(...)`](#void-setheartbeatheartbeatlevel-level) | Pinapalitan ang kasalukuyang antas ng tibok |
-| [`setActiveHigh(...)`](#void-setactivehighbool-activehigh) | Itinatakda kung active HIGH o LOW ang output logic |
-
-### 📊 Pagkuha ng Datos
-| API | Paggamit |
-| :-- | :-- |
+| [`heartbeat(...)`](#void-setheartbeatheartbeatlevel-level) | Pinapalitan ang kasalukuyang antas ng tibok |
+| [`activeHigh(...)`](#void-setactivehighbool-activehigh) | Itinatakda kung active HIGH o LOW ang output logic |
 | [`getPin()`](#int-getpin-const) | Ibinabalik ang GPIO pin na ginagamit para sa status indicator |
 | [`getLabel()`](#string-getlabel-const) | Ibinabalik ang label na ginagamit para sa status indicator |
 | [`getHeartbeat()`](#unsigned-long-getheartbeat-const) | Ibinabalik ang kasalukuyang tibok interval (sa `millis`) |
@@ -35,10 +22,6 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 | [`getLastToggle()`](#unsigned-long-getlasttoggle-const) | Ibinabalik ang huling oras ng pagtibok (millis) |
 | [`isActiveHigh()`](#bool-isactivehigh-const) | Ibinabalik kung active HIGH o LOW ang output |
 | [`isEnabled()`](#bool-isenabled-const) | Ibinabalik kung ang tibok ay pinagana o hindi |
-
-### 📦 Mga Konstant
-| API | Paggamit |
-| :-- | :-- |
 | [`EMERGENCY`](#enum-heartbeatlevel) <br> [`CRITICAL`](#enum-heartbeatlevel) <br> [`WARNING`](#enum-heartbeatlevel) <br> [`NORMAL`](#enum-heartbeatlevel) | Mga konstant ng enum `HeartbeatLevel` para sa antas ng tibok |
 
 </center>
