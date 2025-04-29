@@ -6,14 +6,14 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
-## [Unreleased]
+## [0.2.0] - 2025-04-29
 
 ### Idinagdag
 - **Idinagdag** ang mga bagong getter method: `getPin()`, `isActiveHigh()`, `isEnabled()`, `getState()`, `getLastToggle()`, at `getHeartbeat`.
 - **Dinagdagan** ng parameter ang `enable()`, `activeHigh()`, at `heartbeat()`, kasama ang mga default value nito.
-- **Dinagdagan** ng parameter ang `Tibok` para suportahan ang `level`, `activeHigh`, at `enabled`, kasama ang mga default value nito.
+- **Dinagdagan** ng parameter ang konstruktor na `Tibok()` para suportahan ang `level`, `activeHigh`, at `enabled`, kasama ang mga default value nito.
 - **Dinagdagan** ng suporta para sa *chaining  methods*.
-- **Hinahand**a para suportahan ang **Arduino Library Manager**.
+- **Hinahanda** para suportahan ang **Arduino Library Manager**.
 
 ### Pinalitan
 - **Pinalitan** ang pangalan ng buong library bilang `Tibok`

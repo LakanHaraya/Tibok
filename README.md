@@ -3,7 +3,7 @@
 ![Malapamantayan](https://img.shields.io/badge/malapamantayan-LNDH--0051-purple)
 
 📅 *Petsa ng Paglalathala:* **2025-04-11**   
-🛠️ *Huling Rebisyon:* **2025-04-28**  
+🛠️ *Huling Rebisyon:* **2025-04-29**  
 👨‍💻 *May-akda:* **Lakan Haraya Dima**  
 
 Ang **Tibok** ay isang magaan at mumunting aklatan para sa
