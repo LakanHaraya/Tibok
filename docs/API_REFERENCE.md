@@ -171,7 +171,7 @@ Ilang mahahalagang detalye ukol sa maayos at inaasahang paggamit ng `Tibok` libr
 - Iminumungkahi ang paggamit ng `millis()`-*based logic* para sa ibang bahagi ng iyong sketch upang hindi makaapekto sa tibok.
 
 ### ⚙️ Dynamic Configuration
-- Ligtas gamitin ang mga setter gaya ng `setHeartbeat()`, `setActiveHigh()`, at `enable()` kahit habang tumatakbo ang tibok.
+- Ligtas gamitin ang mga setter gaya ng `heartbeat()`, `activeHigh()`, at `enable()` kahit habang tumatakbo ang tibok.
 - Maaari mong baguhin ang antas ng tibok anumang oras ayon sa pangangailangan ng sistema.
 
 ### ⚡ Pin Control
