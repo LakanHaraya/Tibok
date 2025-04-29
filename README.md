@@ -1,4 +1,4 @@
-# 📖 `Tibok/` Unreleased
+# 📖 `Tibok/`
 ![Release](https://img.shields.io/github/v/release/LakanHaraya/Tibok?include_prereleases)
 ![Malapamantayan](https://img.shields.io/badge/malapamantayan-LNDH--0051-purple)
 
