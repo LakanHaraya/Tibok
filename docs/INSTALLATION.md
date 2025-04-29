@@ -6,9 +6,11 @@ Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, maga
   - [Paraan 1: Paggamit ng Arduino IDE (Manually)](#paraan-1-paggamit-ng-arduino-ide-manually)
   - [Paraan 2: Paggamit ng PlatformIO](#paraan-2-paggamit-ng-platformio)
 - [Verification of Installation](#verification-of-installation)  
+   - [Arduino IDE](#arduino-ide)   
+   - [PlatformIO](#platformio)
 - [Uninstallation](#uninstallation)  
-  - [Arduino IDE](#arduino-ide-manually) 
-  - [PlatformIO](#platformio)  
+  - [Paraan 1: Arduino IDE](#paraan-1-arduino-ide-manually) 
+  - [Paraan 2: PlatformIO](#paraan-2-platformio)  
 
 ---
 
@@ -73,14 +75,18 @@ Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, maga
 
 ## Verification of Installation
 
-Upang matiyak na tama ang pag-install ng library, subukan ang isang halimbawa mula sa `examples/` folder. Maaari mong buksan ang isa sa mga halimbawa at i-upload ito sa iyong board.
+### Arduino IDE
+- Subukan ang isang halimbawa. Magpunta sa `Files` > `Examples` > `Tibok` at pumili ng isa sa halimbawa.
+
+### PlatformIO
+- Subukan ang isang halimbawa mula sa `examples/` folder. Maaari mong buksan ang isa sa mga halimbawa at i-upload ito sa iyong board.
 
 ---
 
 ## Uninstallation
 Kung nais mong tanggalin ang library mula sa:
 
-### Arduino IDE *(Manually)*:
+### Paraan 1: *Arduino IDE (Manually)*
 
 #### Hakbang 1: Hanapin ang Folder ng Library
 - Pumunta sa iyong **Arduino libraries folder**:
@@ -108,6 +114,6 @@ Kung nais mong tanggalin ang library mula sa:
 
 - Kung hindi mo na ito makita sa listahan ng mga library, matagumpay na itong na-uninstall.
 
-### PlatformIO:
+### Paraan 2: *PlatformIO*
 
 - Tanggalin ang folder ng `Tibok/` mula sa `lib/` directory ng iyong proyekto.
