@@ -29,9 +29,10 @@ iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay s
   - `WARNING`: 500ms hatimpuktol (1Hz)
   - `NORMAL`: 1s hatimpuktol (0.5Hz)
 
-- **Dynamic na Pagpapalit ng Tibok**: Gamit ang `setHeartbeat()` para baguhin ang *heartbeat level* at `setActiveHigh()` upang itakda ang active HIGH o LOW logic.
-
-- **Runtime Control**: Gamit ang `enable()` para paganahin o di-paganahin ang tibok sa runtime.
+- **Dynamic na Pagkontrol sa Tibok sa Runtime**: Gamit ang `heartbeat()`
+para baguhin ang *heartbeat level*, `activeHigh()` upang itakda ang
+active HIGH o LOW logic, at `enable()` para paganahin o hindi
+paganahin ang tibok habang umaandar ang programa.
 
 - **Getter Methods**: Madaling makuha ang impormasyon tungkol sa tibok gamit ang mga getter methods:
   - `getPin()` – kinukuha ang pin number
@@ -46,9 +47,9 @@ iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay s
 
 ## Karagdagang Dokumentasyon
 
-- [INSTALLATION.md](../docs/INSTALLATION.md)
-- [API_REFERENCE.md](../docs/API_REFERENCE.md)
-- [CHANGELOG.md](../docs/CHANGELOG.md)
+- [INSTALLATION.md](docs/INSTALLATION.md)
+- [API_REFERENCE.md](docs/API_REFERENCE.md)
+- [CHANGELOG.md](docs/CHANGELOG.md)
 
 ---
 
@@ -56,14 +57,14 @@ iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay s
 
 Tingnan ang [`examples/`](examples/) folder para sa mga sumusunod na sketch.
 
-- [`ActiveLowHighHeartbeat.ino`](examples/ActiveLowHighHeartbeat/) – Aktibong LOW at aktibong HIGH na signal
-- [`BasicHeartbeat.ino`](examples/BasicHeartbeat/) – Simpleng tibok
-- [`WithChainedMethods.ino`](examples/ChainingMethods/) – Paggamit ng chaining method
-- [`GetStateChange.ino`](examples/GetStateChange/) – Subaybayan ang estado ng indikador at ipakita ang mga pagbabago sa estado nito.
-- [`TibokGetters.ino`](examples/TibokGetters/) – Kunin ang mga iba't ibang impormasyon tungkol sa status indicator
-- [`ConstructorDemo.ino`](examples/ConstructorDemo/) – Iba't ibang paraan ng paggamit ng constructor gamit ang magkakaibang bilang ng argumento.
-- [`DynamicHeartbeat.ino`](examples/DynamicHeartbeat/) – Pagpapalit ng tibok sa runtime
-- [`EnableDisable.ino`](examples/EnableDisable/) – Pagtikwas ng tibok
+- [`ActiveLowHighHeartbeat.ino`](examples/ActiveLowHighHeartbeat/ActiveLowHighHeartbeat.ino) – Aktibong LOW at aktibong HIGH na signal
+- [`BasicHeartbeat.ino`](examples/BasicHeartbeat/BasicHeartbeat.ino) – Simpleng tibok
+- [`WithChainedMethods.ino`](examples/WithChainedMethods/WithChainedMethods.ino) – Paggamit ng chaining method
+- [`GetStateChange.ino`](examples/GetStateChange/GetStateChange.ino) – Subaybayan ang estado ng indikador at ipakita ang mga pagbabago sa estado nito.
+- [`TibokGetters.ino`](examples/TibokGetters/TibokGetters.ino) – Kunin ang mga iba't ibang impormasyon tungkol sa status indicator
+- [`ConstructorDemo.ino`](examples/ConstructorDemo/ConstructorDemo.ino) – Iba't ibang paraan ng paggamit ng constructor gamit ang magkakaibang bilang ng argumento.
+- [`DynamicHeartbeat.ino`](examples/DynamicHeartbeat/DynamicHeartbeat.ino) – Pagpapalit ng tibok sa runtime
+- [`EnableDisable.ino`](examples/EnableDisable/EnableDisable.ino) – Pagtikwas ng tibok
 
 > ### Testing
 > 1. I-upload ang isa sa mga halimbawa sa iyong board.
