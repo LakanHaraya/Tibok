@@ -12,9 +12,9 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 | :-- | :-- |
 | [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level--normal-bool-activehigh--true-bool-enabled--true) | Konstruktor – paglikha ng halimbagay ng `Tibok` class | 
 | [`update()`](#void-update) | Isinasapanahon ang tibok; kailangang tawagin sa loob ng `loop()` |
-| [`enable(...)`](#void-enablebool-enabled--true) | Pinapagana o pinapahinto ang tibok |
-| [`heartbeat(...)`](#void-setheartbeatheartbeatlevel-level) | Pinapalitan ang kasalukuyang antas ng tibok |
-| [`activeHigh(...)`](#void-setactivehighbool-activehigh) | Itinatakda kung active HIGH o LOW ang output logic |
+| [`enable(...)`](#tibok-enablebool-enabled--true) | Pinapagana o pinapahinto ang tibok |
+| [`heartbeat(...)`](#tibok-heartbeatheartbeatlevel-level--normal) | Pinapalitan ang kasalukuyang antas ng tibok |
+| [`activeHigh(...)`](#tibok-activehighbool-activehigh--true) | Itinatakda kung active HIGH o LOW ang output logic |
 | [`getPin()`](#int-getpin-const) | Ibinabalik ang GPIO pin na ginagamit para sa status indicator |
 | [`getLabel()`](#string-getlabel-const) | Ibinabalik ang label na ginagamit para sa status indicator |
 | [`getHeartbeat()`](#unsigned-long-getheartbeat-const) | Ibinabalik ang kasalukuyang tibok interval (sa `millis`) |
@@ -55,6 +55,8 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
+## 🔄 Panakdang Metodo *(Setter Methods)*
+
 ### `Tibok& enable(bool enabled = true)`
 
 **Layunin:** Pinapagana o pinapahinto ang tibok ng status indicator.
@@ -68,8 +70,6 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 </center>
 
 ---
-
-## 🔄 Kumpigurasyon
 
 ### `Tibok& heartbeat(HeartbeatLevel level = NORMAL)`
 
@@ -99,7 +99,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
-## 📊 Pagkuha ng Datos
+## 📊 Panguhang Metodo *(Getter Methods)*
 
 ### `int getPin() const`
 
