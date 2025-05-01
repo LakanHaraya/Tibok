@@ -1,8 +1,9 @@
 # 📖 `Tibok/`
 ![Release](https://img.shields.io/github/v/release/LakanHaraya/Tibok?include_prereleases)
 ![Malapamantayan](https://img.shields.io/badge/malapamantayan-LNDH--0051-purple)  
-![Last Commit](https://img.shields.io/github/last-commit/LakanHaraya/Tibok?label=last%20commit&style=flat-square)  
-![First Commit](https://img.shields.io/badge/first%20commit-2025--04--11-blue)
+![Last Commit](https://img.shields.io/github/last-commit/LakanHaraya/Tibok?label=last%20commit&style=flat-square)
+![First Commit](https://img.shields.io/badge/first%20commit-2025--04--11-FCD116)  
+![Language](https://img.shields.io/badge/language-Filipino%20(may%20neolohismo)-0038A8)
 
 Ang **Tibok** ay isang magaan at mumunting aklatan para sa
 pagkontrol ng LED o iba pang output device bilang *status indicator* na
