@@ -74,4 +74,4 @@ Tingnan ang [`examples/`](examples/) folder para sa mga sumusunod na sketch.
 
 ## Lisensiya
 
-Ang **Tibok** ay inilabas sa ilalim ng [MIT License](LICENSE)
+Ang **Tibok** ay inilabas sa ilalim ng [MIT License](license.txt)
