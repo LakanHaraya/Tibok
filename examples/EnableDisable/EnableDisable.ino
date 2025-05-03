@@ -14,7 +14,7 @@
 #include <Tibok.h>
 
 // LED na may CRITICAL tibok (1000ms)
-Tibok heartLED(13, CRITICAL);
+Tibok heartLED(13, Tibok::CRITICAL);
 
 void setup() {
 }

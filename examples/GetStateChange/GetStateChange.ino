@@ -23,7 +23,7 @@
 #include <Arduino.h>
 #include <Tibok.h>
 
-Tibok statusLed(LED_BUILTIN, NORMAL);  // Gumamit ng built-in LED para sa demo
+Tibok statusLed(LED_BUILTIN, Tibok::NORMAL);  // Gumamit ng built-in LED para sa demo
 // Subukang palitan ang HEARTBEAT level sa WARNING o CRITICAL para sa iba't ibang mga epekto
 
 unsigned int printCounter = 0;  // Counter para sa bilang ng mga pag-print

@@ -15,7 +15,7 @@
 #include <Tibok.h>
 
 // Gumamit ng NORMAL bilang panimulang tibok
-Tibok statusLED(13, NORMAL);
+Tibok statusLED(13, Tibok::NORMAL);
 
 void setup() {
 }
@@ -27,7 +27,7 @@ void loop() {
     // Palitan ang tibok tuwing 5 segundo
     if (now - lastChange > 5000) {
         static bool toggle = false;
-        statusLED.heartbeat(toggle ? EMERGENCY : WARNING);
+        statusLED.heartbeat(toggle ? Tibok::EMERGENCY : Tibok::WARNING);
         toggle = !toggle;
         lastChange = now;
     }

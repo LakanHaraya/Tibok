@@ -22,7 +22,7 @@
 #include <Arduino.h>
 #include <Tibok.h>
 
-Tibok statusLed(LED_BUILTIN, WARNING);  // Gumamit ng built-in LED para sa demo
+Tibok statusLed(LED_BUILTIN, Tibok::WARNING);  // Gumamit ng built-in LED para sa demo
 
 void setup() {
     Serial.begin(115200);

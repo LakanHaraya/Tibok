@@ -20,7 +20,7 @@ Tibok tibok(13);
 void setup() {
     // Set the LED to use the following configurations using method chaining:
     tibok.activeHigh(false)             // Set active LOW logic
-        .heartbeat(CRITICAL)            // Set heartbeat to CRITICAL (250ms pulse)
+        .heartbeat(Tibok::CRITICAL)            // Set heartbeat to CRITICAL (250ms pulse)
         .enable(true);                  // Enable the heartbeat signal
 
     // Pag-verify sa mga setting

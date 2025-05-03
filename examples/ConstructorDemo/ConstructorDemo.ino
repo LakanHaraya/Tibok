@@ -10,11 +10,11 @@
   Mga Halimbawa ng Konstruksiyon:
     - Tibok(2)
       → Itinakda ang unang parameter at default values sa tatlong huling parameter.
-    - Tibok(3, WARNING)
+    - Tibok(3, Tibok::WARNING)
       → Itinakda ang unang dalawang parameter at default values sa dalawang huling parameter.
-    - Tibok(4, CRITICAL, true)
+    - Tibok(4, Tibok::CRITICAL, true)
       → Itinakda ang unang tatlong parameter at default values sa huling parameter.ed = true (default)
-    - Tibok(5, EMERGENCY, true, true)
+    - Tibok(5, Tibok::EMERGENCY, true, true)
       → Kompletong custom configuration.
 
   Layunin:
@@ -33,9 +33,9 @@
 
 // Apat na magkakaibang setup ng Tibok
 Tibok tibok2(2);  // level = NORMAL (default), activeHigh = true (default), enabled = true (default) 
-Tibok tibok3(3, WARNING);  // activeHigh = true (default), enabled = true (default)
-Tibok tibok4(4, CRITICAL, true); // enabled = true (default)
-Tibok tibok5(5, EMERGENCY, true, true); 
+Tibok tibok3(3, Tibok::WARNING);  // activeHigh = true (default), enabled = true (default)
+Tibok tibok4(4, Tibok::CRITICAL, true); // enabled = true (default)
+Tibok tibok5(5, Tibok::EMERGENCY, true, true); 
 
 void setup() {
     // Walang kailangang setup code bukod sa automatic constructor init
