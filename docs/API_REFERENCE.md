@@ -19,10 +19,10 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 | [`getLabel()`](#string-getlabel-const) | Ibinabalik ang label na ginagamit para sa status indicator |
 | [`getHeartbeat()`](#unsigned-long-getheartbeat-const) | Ibinabalik ang kasalukuyang tibok interval (sa `millis`) |
 | [`getState()`](#bool-getstate-const) | Ibinabalik ang kasalukuyang estado ng status indicator |
-| [`getLastToggle()`](#unsigned-long-getlasttoggle-const) | Ibinabalik ang huling oras ng pagtibok (millis) |
+| [`getLastToggle()`](#unsigned-long-getlasttoggle-const) | Ibinabalik ang huling oras ng pagtibok (`millis`) |
 | [`isActiveHigh()`](#bool-isactivehigh-const) | Ibinabalik kung active HIGH o LOW ang output |
 | [`isEnabled()`](#bool-isenabled-const) | Ibinabalik kung ang tibok ay pinagana o hindi |
-| [`EMERGENCY`](#enum-heartbeatlevel) <br> [`CRITICAL`](#enum-heartbeatlevel) <br> [`WARNING`](#enum-heartbeatlevel) <br> [`NORMAL`](#enum-heartbeatlevel) | Mga konstant ng enum `HeartbeatLevel` para sa antas ng tibok |
+| [`Tibok::EMERGENCY`](#enum-heartbeatlevel) <br> [`Tibok::CRITICAL`](#enum-heartbeatlevel) <br> [`Tibok::WARNING`](#enum-heartbeatlevel) <br> [`Tibok::NORMAL`](#enum-heartbeatlevel) | Mga konstant ng enum `HeartbeatLevel` para sa antas ng tibok |
 
 </center>
 
@@ -30,7 +30,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ## 🏗️ Konstruktor
 
-### `Tibok(int pin, HeartbeatLevel level = NORMAL, bool activeHigh = true, bool enabled = true)`
+### `Tibok(int pin, HeartbeatLevel level = Tibok::NORMAL, bool activeHigh = true, bool enabled = true)`
 
 **Layunin:** Gumawa ng bagong `Tibok` object.
 
@@ -39,7 +39,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 | Parameter | Uri | Paliwanag | Default |
 |----------|-----|---|-----------|
 | `pin` | `int` | GPIO pin na kokontrolin | *Wala* |
-| `level` | `HeartbeatLevel` | Inisyal na antas ng tibok (tingnan ang mga [konstant](#enum-heartbeatlevel)) | `NORMAL` |
+| `level` | `HeartbeatLevel` | Inisyal na antas ng tibok (tingnan ang mga [konstant](#enum-heartbeatlevel)) | `Tibok::NORMAL` |
 | `activeHigh` | `bool` | Kung `true`, active HIGH ang output. <br> Kung `false`, active LOW. | `true` |
 | `enabled` | `bool` | Kung `true`, awtomatikong pinapagana ang tibok. <br> Kung `false`, hindi pagaganahin. | `true` |
 
@@ -71,7 +71,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
-### `Tibok& heartbeat(HeartbeatLevel level = NORMAL)`
+### `Tibok& heartbeat(HeartbeatLevel level = Tibok::NORMAL)`
 
 **Layunin:** Palitan ang kasalukuyang tibok interval.
 
@@ -79,7 +79,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 | Parameter | Uri | Paliwanag | Mga Halagang <br> Tinatanggap | Default |
 |----------|-----|----|----|---|
-| `level` | `HeartbeatLevel` | Bagong itinakdang antas ng tibok. <br> [tingnan](#enum-heartbeatlevel) |  `EMERGENCY` <br> `CRITICAL` <br> `WARNING` <br> `NORMAL` | `NORMAL` |
+| `level` | `HeartbeatLevel` | Bagong itinakdang antas ng tibok. <br> [tingnan](#enum-heartbeatlevel) |  `Tibok::EMERGENCY` <br> `Tibok::CRITICAL` <br> `Tibok::WARNING` <br> `Tibok::NORMAL` | `Tibok::NORMAL` |
 
 </center>
 
@@ -151,12 +151,12 @@ Predefined na tibok na mga delay (sa milliseconds):
 
 <center>
 
-| Enum | Value (*ms*) | Dalasan (*Hz*) | Paliwanag |
+| Antas ng Tibok | Hatimpuktol (*ms*) | Dalasan (*Hz*) | Paliwanag |
 |------|-------|---------|-----------|
-| `EMERGENCY` | `125` | **4** | Mabilis na tibok para sa matinding alerto |
-| `CRITICAL` | `250` | **2** | Kritikal na tibok |
-| `WARNING` | `500` | **1** | Babala |
-| `NORMAL` | `1000` | **0.5** ( *1 ulit / 2 seg* ) | Pangkaraniwang tibok |
+| `Tibok::EMERGENCY` | `125` | **4** | Mabilis na tibok para sa matinding alerto |
+| `Tibok::CRITICAL` | `250` | **2** | Kritikal na tibok |
+| `Tibok::WARNING` | `500` | **1** | Babala |
+| `Tibok::NORMAL` | `1000` | **0.5** ( *1 ulit / 2 seg* ) | Pangkaraniwang tibok |
 
 </center>
 

@@ -6,6 +6,13 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
+## [Unreleased]
+
+### Pinalitan
+- **BUMABASAG:** Inilipat ang enum `HeartbeatLevel` sa loob ng `Tibok` class (`Tibok::HeartbeatLevel`) upang maiwasan ang alitan sa ibang libraries. Gamitin na ngayon ang `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, at `Tibok::EMERGENCY`.
+
+---
+
 ## [0.2.0] - 2025-04-29
 
 ### Idinagdag

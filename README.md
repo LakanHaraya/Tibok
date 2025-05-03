@@ -8,7 +8,7 @@
 Ang **Tibok** ay isang magaan at mumunting aklatan para sa
 pagkontrol ng LED o iba pang output device bilang *status indicator* na
 sumasalamin sa operational status ng sistema. Ang tibok ay maaaring magpakita ng
-iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay sa antas ng alerto sa pamantayang
+iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, o `Tibok::EMERGENCY` batay sa antas ng alerto sa pamantayang
 [IEC 60073:2002](https://webstore.iec.ch/en/publication/587).
 
 > Ang aklatang ito ay bahagi ng *Proyektong LundayHangin* ngunit
@@ -23,10 +23,10 @@ iba't ibang antas gaya ng `NORMAL`, `WARNING`, `CRITICAL`, o `EMERGENCY` batay s
 - **Simpleng API para sa heartbeat-style LED signaling**: Madaling gamitin upang magbigay ng visual feedback gamit ang LED o ibang output device bilang *heartbeat indicator*.
 
 - **Predefined Heartbeat Levels**: May apat na *heartbeat levels* na maaaring itakda:
-  - `EMERGENCY`: 125ms hatimpuktol (4Hz)
-  - `CRITICAL`: 250ms hatimpuktol (2Hz)
-  - `WARNING`: 500ms hatimpuktol (1Hz)
-  - `NORMAL`: 1s hatimpuktol (0.5Hz)
+  - `Tibok::EMERGENCY`: 125ms hatimpuktol (4Hz)
+  - `Tibok::CRITICAL`: 250ms hatimpuktol (2Hz)
+  - `Tibok::WARNING`: 500ms hatimpuktol (1Hz)
+  - `Tibok::NORMAL`: 1s hatimpuktol (0.5Hz)
 
 - **Dynamic na Pagkontrol sa Tibok sa Runtime**: Gamit ang `heartbeat()`
 para baguhin ang *heartbeat level*, `activeHigh()` upang itakda ang
