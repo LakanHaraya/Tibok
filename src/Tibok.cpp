@@ -26,7 +26,7 @@ Tibok& Tibok::enable(bool enabled) {
 }
 
 // Itinatakda ang estado ng active HIGH o active LOW.
-Tibok& Tibok::activeHigh(bool activeHigh) {
+Tibok& Tibok::setActiveHigh(bool activeHigh) {
     _activeHigh = activeHigh;
     // I-reset ang estado ng pin ayon sa bagong logic level
     digitalWrite(_pin, _state == _activeHigh ? HIGH : LOW);
@@ -34,7 +34,7 @@ Tibok& Tibok::activeHigh(bool activeHigh) {
 }
 
 // Itinatakda ang bagong heartbeat level at ina-update ang tagal ng pagtikwas.
-Tibok& Tibok::heartbeat(HeartbeatLevel level) {
+Tibok& Tibok::setHeartbeat(HeartbeatLevel level) {
     _level = level;
     return *this; // Ibalik ang kasalukuyang object para sa chaining
 }
@@ -48,15 +48,15 @@ int Tibok::getPin() const {
 String Tibok::getLabel() const {
     switch (_level) {
         case EMERGENCY:
-            return String("KAGIPITAN");
+            return F("KAGIPITAN");
         case CRITICAL:
-            return String("KRITIKAL");
+            return F("KRITIKAL");
         case WARNING:
-            return String("BABALA");
+            return F("BABALA");
         case NORMAL:
-            return String("NORMAL");
+            return F("NORMAL");
         default:
-            return String("HINDI TINAKDA");
+            return F("DI-KILALA");
     }
 }
 

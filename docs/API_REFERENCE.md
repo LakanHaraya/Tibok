@@ -13,8 +13,8 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 | [`Tibok(...)`](#tibokint-pin-heartbeatlevel-level--normal-bool-activehigh--true-bool-enabled--true) | Konstruktor – paglikha ng halimbagay ng `Tibok` class | 
 | [`update()`](#void-update) | Isinasapanahon ang tibok; kailangang tawagin sa loob ng `loop()` |
 | [`enable(...)`](#tibok-enablebool-enabled--true) | Pinapagana o pinapahinto ang tibok |
-| [`heartbeat(...)`](#tibok-heartbeatheartbeatlevel-level--normal) | Pinapalitan ang kasalukuyang antas ng tibok |
-| [`activeHigh(...)`](#tibok-activehighbool-activehigh--true) | Itinatakda kung active HIGH o LOW ang output logic |
+| [`setHeartbeat(...)`](#tibok-setheartbeatheartbeatlevel-level--tiboknormal) | Pinapalitan ang kasalukuyang antas ng tibok |
+| [`setActiveHigh(...)`](#tibok-setactivehighbool-activehigh--true) | Itinatakda kung active HIGH o LOW ang output logic |
 | [`getPin()`](#int-getpin-const) | Ibinabalik ang GPIO pin na ginagamit para sa status indicator |
 | [`getLabel()`](#string-getlabel-const) | Ibinabalik ang label na ginagamit para sa status indicator |
 | [`getHeartbeat()`](#unsigned-long-getheartbeat-const) | Ibinabalik ang kasalukuyang tibok interval (sa `millis`) |
@@ -71,7 +71,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
-### `Tibok& heartbeat(HeartbeatLevel level = Tibok::NORMAL)`
+### `Tibok& setHeartbeat(HeartbeatLevel level = Tibok::NORMAL)`
 
 **Layunin:** Palitan ang kasalukuyang tibok interval.
 
@@ -85,7 +85,7 @@ Ito ang detalyadong talaan ng mga magagamit na API (Application Programming Inte
 
 ---
 
-### `Tibok& activeHigh(bool activeHigh = true)`
+### `Tibok& setActiveHigh(bool activeHigh = true)`
 
 **Layunin:** Itinatakda kung active HIGH o LOW ang output.
 
@@ -171,7 +171,7 @@ Ilang mahahalagang detalye ukol sa maayos at inaasahang paggamit ng `Tibok` libr
 - Iminumungkahi ang paggamit ng `millis()`-*based logic* para sa ibang bahagi ng iyong sketch upang hindi makaapekto sa tibok.
 
 ### ⚙️ Dynamic Configuration
-- Ligtas gamitin ang mga setter gaya ng `heartbeat()`, `activeHigh()`, at `enable()` kahit habang tumatakbo ang tibok.
+- Ligtas gamitin ang mga setter gaya ng `setHeartbeat()`, `setActiveHigh()`, at `enable()` kahit habang tumatakbo ang tibok.
 - Maaari mong baguhin ang antas ng tibok anumang oras ayon sa pangangailangan ng sistema.
 
 ### ⚡ Pin Control
