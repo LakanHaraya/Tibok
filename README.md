@@ -20,27 +20,13 @@ iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, 
 
 ## Mga Tampok
 
-- **Simpleng API para sa heartbeat-style LED signaling**: Madaling gamitin upang magbigay ng visual feedback gamit ang LED o ibang output device bilang *heartbeat indicator*.
+- Maaaring ikumpigura ang antas ng tibok batay sa mga predefined na halaga (4Hz hanggang 0.5Hz)
+- Non-blocking na `update()` para sa maayos na pagtakbo ng `loop()`
+- Suportado ang active HIGH o LOW na logic
+- Puwedeng i-enable o i-disable ang pagtibok sa runtime
+- May readable na mga label para sa bawat antas ng tibok
+- Fluent API para sa madaling dugtungan ng mga method
 
-- **Predefined Heartbeat Levels**: May apat na *heartbeat levels* na maaaring itakda:
-  - `Tibok::EMERGENCY`: 125ms hatimpuktol (4Hz)
-  - `Tibok::CRITICAL`: 250ms hatimpuktol (2Hz)
-  - `Tibok::WARNING`: 500ms hatimpuktol (1Hz)
-  - `Tibok::NORMAL`: 1s hatimpuktol (0.5Hz)
-
-- **Dynamic na Pagkontrol sa Tibok sa Runtime**: Gamit ang `heartbeat()`
-para baguhin ang *heartbeat level*, `activeHigh()` upang itakda ang
-active HIGH o LOW logic, at `enable()` para paganahin o hindi
-paganahin ang tibok habang umaandar ang programa.
-
-- **Getter Methods**: Madaling makuha ang impormasyon tungkol sa tibok gamit ang mga getter methods:
-  - `getPin()` – kinukuha ang pin number
-  - `getLabel()` – kinukuha ang label ng kasalukuyang *heartbeat level*
-  - `getState()` – kinukuha ang kasalukuyang estado (HIGH o LOW)
-  - `getLastToggle()` – kinukuha ang oras ng huling pagtikwas
-  - `getHeartbeat()` – kinukuha ang numerical value ng *heartbeat level*
-  - `isActiveHigh()` – kinukuha kung ang output ay active HIGH
-  - `isEnabled()` – kinukuha kung ang tibok ay naka-enable
 
 ---
 

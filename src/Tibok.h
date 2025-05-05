@@ -12,6 +12,7 @@
  */
 class Tibok {
     public:
+        // Antas ng tibok
         enum HeartbeatLevel : uint16_t {
             EMERGENCY = 125,    /** @brief 4 Hz – 125ms bawat hatimpuktol (HIGH or LOW); 250ms kabuoang puktol.*/
             CRITICAL = 250,     /** @brief 2 Hz – 250ms bawat hatimpuktol; 500ms kabuoang puktol.*/
@@ -19,6 +20,7 @@ class Tibok {
             NORMAL = 1000       /** @brief 0.5 Hz – 1s bawat hatimpuktol; 2s puktol.*/
         };
 
+        // Konstruktor
         Tibok(int pin, HeartbeatLevel level = Tibok::NORMAL, bool activeHigh = true, bool enabled = true);
 
         // Pangkilos
@@ -45,4 +47,6 @@ class Tibok {
         bool _state;                /**Kasalukuyang estado ng status indicator: HIGH o LOW. */
         bool _activeHigh;           /**Tinutukoy kung active HIGH o LOW ang status indicator. */
         bool _enabled;              /**Nagpapahiwatig kung pinagana ang pagtibok. */
+
+        void applyState();
 };
