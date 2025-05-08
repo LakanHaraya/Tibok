@@ -48,5 +48,5 @@ class Tibok {
         bool _activeHigh;           /**Tinutukoy kung active HIGH o LOW ang status indicator. */
         bool _enabled;              /**Nagpapahiwatig kung pinagana ang pagtibok. */
 
-        void applyState();
+        void _applyState();
 };

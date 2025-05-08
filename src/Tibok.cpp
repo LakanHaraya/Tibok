@@ -1,7 +1,7 @@
 #include "Tibok.h"
 
 // Private helper method para ipatupad ang kasalukuyang estado ng output pin.
-void Tibok::applyState() {
+void Tibok::_applyState() {
     digitalWrite(_pin, (_enabled && _state == _activeHigh) ? HIGH : LOW);
 }
 
@@ -10,7 +10,7 @@ void Tibok::applyState() {
 // Konstruktor ng Tibok class na tumatanggap ng pin number, heartbeat level, active HIGH/LOW flag, at enabled flag.
 Tibok::Tibok(int pin, HeartbeatLevel level, bool activeHigh, bool enabled) : _pin(pin), _level(level), _lastToggle(0), _state(false), _activeHigh(activeHigh), _enabled(enabled) {
     pinMode(_pin, OUTPUT);  // Itinatakda ang pin bilang output
-    applyState();           // Itinatakda ang default state
+    _applyState();           // Itinatakda ang default state
 }
 
 // I-update ang estado ng status indicator batay sa kasalukuyang antas ng pagtibok (dapat ilagay sa loob ng `loop()`).
@@ -21,14 +21,14 @@ void Tibok::update() {
     if (now - _lastToggle >= (unsigned long)_level) {
         _lastToggle = now;
         _state = !_state;
-        applyState();
+        _applyState();
     }
 }
 
 // Itinatakda ang estado ng pagtibok (enabled o disabled).
 Tibok& Tibok::enable(bool enabled) {
     _enabled = enabled;
-    applyState(); // I-reset ang estado ng pin ayon sa bagong logic level
+    _applyState(); // I-reset ang estado ng pin ayon sa bagong logic level
     return *this; // Ibalik ang kasalukuyang object para sa chaining
 }
 
@@ -36,7 +36,7 @@ Tibok& Tibok::enable(bool enabled) {
 Tibok& Tibok::setActiveHigh(bool activeHigh) {
     _activeHigh = activeHigh;
     // I-reset ang estado ng pin ayon sa bagong logic level
-    applyState();
+    _applyState();
     return *this; // Ibalik ang kasalukuyang object para sa chaining
 }
 
