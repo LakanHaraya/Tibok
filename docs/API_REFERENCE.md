@@ -23,25 +23,6 @@ Ito ang detalyadong talaan ng mga magagamit na *API (Application Programming Int
 [`Tibok::WARNING`](#enum-heartbeatlevel)
 [`Tibok::NORMAL`](#enum-heartbeatlevel)
 
-<!-- 
-[`Tibok`](#tibokint-pin-heartbeatlevel-level--tiboknormal-bool-activehigh--true-bool-enabled--true)
-[`isapanahon()`](#void-update)
-[`paganahin(...)`](#tibok-enablebool-enabled--true)
-[`itakdaAntas(...)`](#tibok-setheartbeatheartbeatlevel-level--tiboknormal)
-[`itakdaAktibongMataas(...)`](#tibok-setactivehighbool-activehigh--true)
-[`kuninPin()`](#int-getpin-const)
-[`kuninTatak()`](#string-getlabel-const)
-[`kuninAntas()`](#unsigned-long-getheartbeat-const)
-[`kuninEstado()`](#bool-getstate-const)
-[`kuninHulingTikwas()`](#unsigned-long-getlasttoggle-const)
-[`aktibongMataasBa()`](#bool-isactivehigh-const)
-[`pinaganaBa()`](#bool-isenabled-const)
-[`Tibok::KAGIPITAN`](#enum-heartbeatlevel)
-[`Tibok::KRITIKAL`](#enum-heartbeatlevel)
-[`Tibok::BABALA`](#enum-heartbeatlevel)
-[`Tibok::NORMAL`](#enum-heartbeatlevel)
- -->
-
 ---
 
 ## 🏗️ Konstruktor

@@ -14,6 +14,7 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ### Inayos
 - Munting optimisasyon. Walang pagbabago sa lohika.
+- Munting pagsasaayos ng dokumentasyon.
 
 ---
 
