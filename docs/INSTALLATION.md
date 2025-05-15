@@ -1,119 +1,77 @@
 # `Tibok/` – *Installation, Verification, and Uninstallation*
 
-Sa seksiyong ito, ipapakita ang mga hakbang upang matagumpay na ma-install, magamit, at ma-uninstall ang Tibok library.
-
-- [Installation](#installation)  
-  - [Paraan 1: Paggamit ng Arduino IDE (Manually)](#paraan-1-paggamit-ng-arduino-ide-manually)
-  - [Paraan 2: Paggamit ng PlatformIO](#paraan-2-paggamit-ng-platformio)
-- [Verification of Installation](#verification-of-installation)  
-   - [Arduino IDE](#arduino-ide)   
-   - [PlatformIO](#platformio)
-- [Uninstallation](#uninstallation)  
-  - [Paraan 1: Arduino IDE](#paraan-1-arduino-ide-manually) 
-  - [Paraan 2: PlatformIO](#paraan-2-platformio)  
+Ang dokumentong ito ay naglalaman ng kompletong 
+gabay para sa **Installation**, **Verification**,
+at **Uninstallation** ng `Tibok/` library, gamit ang
+alinman sa **Arduino IDE** o **PlatformIO**
 
 ---
 
-## Installation
+- [Arduino IDE (Manual)](#arduino-ide-manual-library-manager)
+   - [Installation](#installation)
+   - [Verification](#verification)
+   - [Uninstallation](#uninstallation)
+- [PlatformIO](#platformio)
+   - [Installation](#installation-1)
+   - [Verification](#verification-1)
+   - [Uninstallation](#uninstallation-1)
 
-### Paraan 1: *Paggamit ng Arduino IDE (Manually)*
+---
 
-#### Hakbang 1: I-download ang Library
+## <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino Logo" width="50" style="vertical-align:middle;"/> Arduino IDE (Manual) (~~Library Manager~~)
 
-- Bisitahin ang **GitHub repository** ng library [dito](https://github.com/LakanHaraya/Tibok.git).
+### Installation <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino Logo" width="20" style="vertical-align:middle;"/>
 
-- I-click ang **Download ZIP** na button upang i-download ang `.zip` file ng library.
+1.  Bisitahin ang [Tibok Github repository](https://github.com/LakanHaraya/Tibok.git)
+2. I-click ang **Code** > **Download ZIP** upang i-download ang `.zip` file ng library
+3. Buksan ang **Arduino IDE**
+4. Pumunta sa `Sketch` > `Include Library` > `Add .ZIP Library...`
+5. Piliin ang na-download na `.zip` file mula sa iyong file explorer
+6. Kapag matagumpay, makikita ang `Tibok` sa `Sketch` > `Include Library`
 
-#### Hakbang 2: Buksan ang Arduino IDE
+### Verification <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino Logo" width="20" style="vertical-align:middle;"/>
 
-- Buksan ang iyong **Arduino IDE** sa iyong computer.
+1. Sa Arduino IDE, pumunta sa `File` > `Examples` > `Tibok`
+2. Piliin ang isa sa mga halimbawa at i-upload ito sa iyong board
+3. Kung gumagana ang sketch, matagumpay ang pag-install
 
-#### Hakbang 3: Magdagdag ng Library
-- Pumunta sa `Sketch` menu.
+### Uninstallation <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino Logo" width="20" style="vertical-align:middle;"/>
 
-- Piliin ang `Include Library` > `Add .ZIP Library...`.
+1. Hanapin ang lokasyon ng Library  
+   - Default folder:
+      - **Windows:** `Documents/Arduino/libraries/`
+      - **macOS:** `~/Documents/Arduino/libraries/`
+      - **Linux:** `~/Arduino/libraries/`
+2. Hanapin ang `Tibok` folder at **i-delete** ito mula sa `libraries/`
+3. I-restart ang IDE upang ma-refresh ang listahan ng libraries
+4. Tingnan ang `Sketch` > `Include Library` — dapat wala na ang `Tibok`
 
-- Hanapin ang na-download na `.zip` file ng library mula sa iyong file explorer at piliin ito.
+---
 
-- Awtomatikong idaragdag ng Arduino IDE ang library at makikita mo ito sa `Sketch` > `Include Library` menu.
+## <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/PlatformIO_logo.svg" alt="PlatformIO" width="40" style="vertical-align:middle;"/> PlatformIO
 
-#### Hakbang 4: I-verify ang Pagkakasunod ng Installation
-- Pumunta sa `Sketch` > `Include Library`.
 
-- Hanapin ang pangalan ng `Tibok` library. 
+### Installation <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/PlatformIO_logo.svg" alt="PlatformIO" width="20" style="vertical-align:middle;"/>
 
-- Kung nakita mo ito sa listahan ng mga available na libraries, matagumpay na itong na-install.
-
-### Paraan 2: *Paggamit ng PlatformIO*
-
-- **I-install ang PlatformIO**  
-   Kung wala ka pang PlatformIO, i-install ito mula sa [PlatformIO website](https://platformio.org/) o gamit ang Visual Studio Code.
-
-- **I-clone ang Repository**  
-   Buksan ang terminal at i-clone ang repository gamit ang git:
-   ```bash
+1. I-clone ang repositoryo
+   ``` bash
    git clone https://github.com/LakanHaraya/Tibok.git
+   ``` 
+2. Kopyahin ang `Tibok/` folder papunta sa `lib/` directory ng iyong PlatformIO project
+3. I-include sa iyong code
+   ``` cpp
+   #include <Tibok.h>
    ```
+4. I-compile at i-upload ang proyekto gamit ang PlatformIO
 
-- **Idagdag ang Library sa PlatformIO Project**
+### Verification <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/PlatformIO_logo.svg" alt="PlatformIO" width="20" style="vertical-align:middle;"/>
+1. Buksan ang isang halimbawa mula sa `examples/` folder ng `Tibok` repository
+2. Ilagay ito sa `src/` ng iyong PlatformIO project
+3. I-build at i-upload ito sa iyong board
+4. Kung walang error at gumagana ang sketch, matagumpay ang pag-install
 
-   - Buksan ang iyong PlatformIO project.
-
-   - Kopyahin ang buong `Tibok/` folder sa `lib/` directory ng iyong PlatformIO project.
-
-4. **Gamitin ang Library sa iyong Code**
-
-   - Sa iyong source file (.cpp o .ino), idagdag ang sumusunod na linya:
-
-      ``` cpp
-      #include <Tibok.h>
-      ```
-5. **I-build at I-upload ang Proyekto**  
-   Matapos idagdag ang library, i-compile at i-upload ang iyong code sa iyong board.
+### Uninstallation <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/PlatformIO_logo.svg" alt="PlatformIO" width="20" style="vertical-align:middle;"/>
+1. Burahin ang `Tibok/` folder mula sa `lib/` directory ng iyong PlatformIO project
+2. Hindi kailangang i-restart ang VSCode o PlatformIO; matatanggal na ito agad sa build system
 
 ---
-
-## Verification of Installation
-
-### Arduino IDE
-- Subukan ang isang halimbawa. Magpunta sa `Files` > `Examples` > `Tibok` at pumili ng isa sa halimbawa.
-
-### PlatformIO
-- Subukan ang isang halimbawa mula sa `examples/` folder. Maaari mong buksan ang isa sa mga halimbawa at i-upload ito sa iyong board.
-
----
-
-## Uninstallation
-Kung nais mong tanggalin ang library mula sa:
-
-### Paraan 1: *Arduino IDE (Manually)*
-
-#### Hakbang 1: Hanapin ang Folder ng Library
-- Pumunta sa iyong **Arduino libraries folder**:
-
-   - **Windows:** `Documents/Arduino/libraries/`
-
-   - **macOS:** `~/Documents/Arduino/libraries/`
-
-   - **Linux:** `~/Arduino/libraries/`
-
-- Sa folder na `libraries/`, hanapin ang `Tibok` library.
-
-#### Hakbang 2: Tanggalin ang Library
-- Kapag nakita mo na ang folder ng library, **i-delete** ito.
-
-   - I-right-click ang folder ng library at piliin ang **Delete** o **Move to Trash** (depende sa iyong operating system).
-
-#### Hakbang 3: I-restart ang Arduino IDE
-- Pagkatapos tanggalin ang folder ng library, **i-restart ang Arduino IDE** upang matanggal ang library mula sa IDE.
-
-#### Hakbang 4: I-verify ang Uninstallation
-- Pumunta sa `Sketch` > `Include Library`.
-
-- I-check kung wala nang entry para sa `Tibok` library.
-
-- Kung hindi mo na ito makita sa listahan ng mga library, matagumpay na itong na-uninstall.
-
-### Paraan 2: *PlatformIO*
-
-- Tanggalin ang folder ng `Tibok/` mula sa `lib/` directory ng iyong proyekto.
