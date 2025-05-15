@@ -6,38 +6,38 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
-## [Unreleased]
+## [0.2.1] - 2025-05-15
 
 ### Pinalitan
 - **BUMABASAG:** Inilipat ang enum `HeartbeatLevel` sa loob ng `Tibok` class (`Tibok::HeartbeatLevel`) upang maiwasan ang alitan sa ibang libraries. Gamitin na ngayon ang `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, at `Tibok::EMERGENCY`.
 - **BUMABASAG:** Ibinalik ang malinaw na pangalan ng mga setter method patungo sa `setActiveHigh()`, at `setHeartbeat()`.
 
 ### Inayos
-- Munting optimisasyon. Walang pagbabago sa lohika.
-- Munting pagsasaayos ng dokumentasyon.
+- **Munting optimisasyon**. Walang pagbabago sa lohika.
+- **Munting pagsasaayos** ng dokumentasyon.
 
 ---
 
 ## [0.2.0] - 2025-04-29
 
 ### Idinagdag
-- **Idinagdag** ang mga bagong getter method: `getPin()`, `isActiveHigh()`, `isEnabled()`, `getState()`, `getLastToggle()`, at `getHeartbeat`.
-- **Dinagdagan** ng parameter ang `enable()`, `activeHigh()`, at `heartbeat()`, kasama ang mga default value nito.
-- **Dinagdagan** ng parameter ang konstruktor na `Tibok()` para suportahan ang `level`, `activeHigh`, at `enabled`, kasama ang mga default value nito.
-- **Dinagdagan** ng suporta para sa *chaining  methods*.
-- **Hinahanda** para suportahan ang **Arduino Library Manager**.
+- Idinagdag ang mga bagong getter method: `getPin()`, `isActiveHigh()`, `isEnabled()`, `getState()`, `getLastToggle()`, at `getHeartbeat`.
+- Dinagdagan ng parameter ang `enable()`, `activeHigh()`, at `heartbeat()`, kasama ang mga default value nito.
+- Dinagdagan ng parameter ang konstruktor na `Tibok()` para suportahan ang `level`, `activeHigh`, at `enabled`, kasama ang mga default value nito.
+- Dinagdagan ng suporta para sa *chaining  methods*.
+- Hinahanda para suportahan ang **Arduino Library Manager**.
 
 ### Pinalitan
-- **Pinalitan** ang pangalan ng buong library bilang `Tibok`
-- **Pinalitan** ang pangalan ng mga method na `setLevel()`, at `setActiveHigh()`, patungo sa `heartbeat()`, at `activeHigh()`.
+- Pinalitan ang pangalan ng buong library bilang `Tibok`
+- Pinalitan ang pangalan ng mga method na `setLevel()`, at `setActiveHigh()`, patungo sa `heartbeat()`, at `activeHigh()`.
 
 ### Tinanggal
-- **Tinanggal** ang `DISABLED` mula sa `HeartbeatLevel`.
-- **Tinanggal** ang `begin()` dahil sinusuportahan na ito sa konstruktor.
-- **Tinanggal** ang `disable()` dahil sinusuportahan na ito sa `enable()`.
+- Tinanggal ang `DISABLED` mula sa `HeartbeatLevel`.
+- Tinanggal ang `begin()` dahil sinusuportahan na ito sa konstruktor.
+- Tinanggal ang `disable()` dahil sinusuportahan na ito sa `enable()`.
 
 ### Inayos
-- **Pangkalahatang pagsasaayos** ng mga dokumentasyon at halimbawa.
+- Pangkalahatang pagsasaayos ng mga dokumentasyon at halimbawa.
 
 ---
 
