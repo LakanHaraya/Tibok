@@ -35,7 +35,7 @@ sa kani-kanilang mga orihinal na may-ari.
 
 - **Lisensiya**: Maaaring saklaw ng karapatang-ari o trademark ng **IEC**.
 
-- **Paalala**: Ginamit para sa **impormasyonal at edukasyonal** na layunin. Walang ipinahihiwatig na ugnayan o pag-eendorso mula sa IEC.
+- **Paalala**: Ginamit para sa **pang-impormasyon at pang-edukasyon** na layunin. Walang ipinahihiwatig na ugnayan o pag-eendorso mula sa IEC.
 
 ---
 

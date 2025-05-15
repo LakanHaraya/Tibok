@@ -6,13 +6,17 @@
 ![Language](https://img.shields.io/badge/language-Filipino%20(may%20neolohismo)-0038A8)
 [![Mga Pagkilala](https://img.shields.io/badge/%F0%9F%93%9D-ATTRIBUTIONS-blue)](docs/ATTRIBUTIONS.md)
 
-<figure align="center">
+<div align="center">
+
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino Logo" title="Arduino" width="90" style="vertical-align:middle;" loading="lazy"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/PlatformIO_logo.svg" alt="PlatformIO Logo" title="PlatformIO" width="90" style="vertical-align:middle;" loading="lazy"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/International_Electrotechnical_Commission_Logo.svg" alt="IEC Logo" title="International Electrotechnical Commission (IEC)" width="90" style="vertical-align:middle;" loading="lazy"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" alt="MIT Logo" title="Massachusetts Institute of Technology (MIT)" width="90" style="vertical-align:middle;" loading="lazy"/>
-  <figcaption>Ginagamit sa proyektong ito ang mga sumusunod na teknolohiya at pamantayan.</figcaption>
-</figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/International_Electrotechnical_Commission_Logo.svg" alt="IEC Logo" title="IEC" width="90" style="vertical-align:middle;" loading="lazy"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" alt="MIT Logo" title="MIT License" width="90" style="vertical-align:middle;" loading="lazy"/>
+
+  <p><em>Ginagamit sa proyektong ito ang mga sumusunod na teknolohiya at pamantayan.</em></p>
+
+</div>
+
 
 ---
 
