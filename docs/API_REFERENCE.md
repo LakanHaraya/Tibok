@@ -6,14 +6,13 @@ Ito ang detalyadong talaan ng mga magagamit na *API (Application Programming Int
 
 ## 📘 Talaan ng API
 
-[`Tibok`](#tibokint-pin-heartbeatlevel-level--tiboknormal-bool-activehigh--true-bool-enabled--true)
+[`Tibok`](#tibokint-pin-heartbeatlevel-level--tibokstandby-bool-activehigh--true-bool-enabled--true)
 [`update()`](#void-update)
 [`enable(...)`](#tibok-enablebool-enabled--true)
-[`setHeartbeat(...)`](#tibok-setheartbeatheartbeatlevel-level--tiboknormal)
+[`setHeartbeat(...)`](#tibok-setheartbeatheartbeatlevel-level--tibokstandby)
 [`setActiveHigh(...)`](#tibok-setactivehighbool-activehigh--true)
 [`getPin()`](#int-getpin-const)
 [`getLabel()`](#string-getlabel-const)
-[`getHeartbeat()`](#unsigned-long-getheartbeat-const)
 [`getState()`](#bool-getstate-const)
 [`getLastToggle()`](#unsigned-long-getlasttoggle-const)
 [`isActiveHigh()`](#bool-isactivehigh-const)
@@ -21,13 +20,15 @@ Ito ang detalyadong talaan ng mga magagamit na *API (Application Programming Int
 [`Tibok::EMERGENCY`](#enum-heartbeatlevel)
 [`Tibok::CRITICAL`](#enum-heartbeatlevel)
 [`Tibok::WARNING`](#enum-heartbeatlevel)
+[`Tibok::NOTICE`](#enum-heartbeatlevel)
+[`Tibok::STANDBY`](#enum-heartbeatlevel)
 [`Tibok::NORMAL`](#enum-heartbeatlevel)
 
 ---
 
 ## 🏗️ Konstruktor
 
-### `Tibok(int pin, HeartbeatLevel level = Tibok::NORMAL, bool activeHigh = true, bool enabled = true)`
+### `Tibok(int pin, HeartbeatLevel level = Tibok::STANDBY, bool activeHigh = true, bool enabled = true)`
 
 Gumawa ng bagong `Tibok` objek na may partikular na GPIO pin at asal.
 
@@ -36,7 +37,7 @@ Gumawa ng bagong `Tibok` objek na may partikular na GPIO pin at asal.
 | Parameter | Uri | Paliwanag | Default |
 |----------|-----|---|-----------|
 | `pin` | `int` | GPIO pin na kokontrolin | *Wala* |
-| `level` | `HeartbeatLevel` | Inisyal na antas ng tibok (tingnan ang mga [konstant](#enum-heartbeatlevel)) | `Tibok::NORMAL` |
+| `level` | `HeartbeatLevel` | Inisyal na antas ng tibok (tingnan ang mga [konstant](#enum-heartbeatlevel)) | `Tibok::STANDBY` |
 | `activeHigh` | `bool` | Antas ng lohika: aktibo sa HIGH o LOW | `true` |
 | `enabled` | `bool` | Awtomatikong pagaganahin ba ang tibok? | `true` |
 
@@ -75,7 +76,7 @@ Pinapagana o pinapahinto ang tibok.
 
 ---
 
-### `Tibok& setHeartbeat(HeartbeatLevel level = Tibok::NORMAL)`
+### `Tibok& setHeartbeat(HeartbeatLevel level = Tibok::STANDBY)`
 
 Itinatakda ang bagong heartbeat level.
 
@@ -83,7 +84,7 @@ Itinatakda ang bagong heartbeat level.
 
 | Parameter | Uri | Paliwanag | Mga Halagang <br> Tinatanggap | Default |
 |----------|-----|----|----|---|
-| `level` | `HeartbeatLevel` | Bagong itinakdang antas ng tibok. <br> [tingnan](#enum-heartbeatlevel) |  `Tibok::EMERGENCY` <br> `Tibok::CRITICAL` <br> `Tibok::WARNING` <br> `Tibok::NORMAL` | `Tibok::NORMAL` |
+| `level` | `HeartbeatLevel` | Bagong itinakdang antas ng tibok. <br> [tingnan](#enum-heartbeatlevel) |  `Tibok::EMERGENCY` <br> `Tibok::CRITICAL` <br> `Tibok::WARNING` <br> `Tibok::NOTICE` <br> `Tibok::STANDBY` <br> `Tibok::NORMAL` | `Tibok::STANDBY` |
 
 </center>
 
@@ -121,19 +122,15 @@ Ibinabalik ang ginamit na GPIO pin number.
 
 Ibinabalik ang human-readable na label ng kasalukuyang `HeartbeatLevel`.
 
-> | Tatak | `HeartbeatLevel` |  
+> | `HeartbeatLevel` | Tatak |
 > | :---: | :---: |
-> | `"KAGIPITAN"` | `Tibok::EMERGENCY` |
-> | `"KRITIKAL"`  | `Tibok::CRITICAL` |
-> | `"BABALA"`    | `Tibok::WARNING` |
-> | `"NORMAL"`    | `Tibok::NORMAL` |
-> | `"DI-KILALA"` | (fallback) |
-
----
-
-### `unsigned long getHeartbeat() const`
-
-Ibinabalik ang kasalukuyang tibok interval sa milliseconds.
+> | `Tibok::EMERGENCY` | `"KAGIPITAN"` |
+> | `Tibok::CRITICAL`  | `"KRITIKAL"`  |
+> | `Tibok::WARNING`   | `"BABALA"`    |
+> | `Tibok::NOTICE`    | `"PAALALA"`   | 
+> | `Tibok::STANDBY`   | `"ANTABAY"`   |
+> | `Tibok::NORMAL`    | `"NORMAL"`    |
+> | (fallback)         | `"DI-KILALA"` |
 
 ---
 
@@ -169,14 +166,22 @@ Mga predefined na antala para sa iba't ibang antas ng alerto:
 
 <center>
 
-| Konstant | Hatimpuktol (ms) | Dalasan (Hz) | Paliwanag |
-|------|-------|---------|-----------|
-| `Tibok::EMERGENCY` | `125` | `4 Hz` | Mabilis na alerto |
-| `Tibok::CRITICAL` | `250` | `2 Hz` | Kritikal na babala |
-| `Tibok::WARNING` | `500` | `1 Hz` | Pangkalahatang babala |
-| `Tibok::NORMAL` | `1000` | `0.5 Hz` ( *1 ulit / 2 seg* ) | Pangkaraniwang tibok |
+| Konstant | Kulay (Rekomendado) | Asal ng Pagtibok <br> (Alinsunod-IEC) | Dalasan (Hz) | Antas ng Priyoridad | Interpretasyon |
+|------|-------|---------|-----------| --- | --- |
+| `Tibok::EMERGENCY` | 🔴 Pula | Kumikislap: mabilis | `~4 Hz` | Pinakamataas | Agarang aksiyon ang kinakailangan |
+| `Tibok::CRITICAL` | 🔴 Pula | Kumikislap: tuloy-tuloy | `~2 Hz` | Mataas | Seryosong atensiyon ang kinakailangan |
+| `Tibok::WARNING` | 🟠 Amber/Dilaw | Kumikislap | `~1 Hz` | Katamtaman | Babalang kondisyon |
+| `Tibok::NOTICE` | 🟢 Berde | Kumikislap: mabagal | `~0.5 Hz` | Mababa | Pang-impormasyong kondisyon |
+| `Tibok::STANDBY` | 🟢 Berde | Kumikislap: mabugso | `~0.5 Hz` mabugso | Napakababa | Matamlay o nakaantabay |
+| `Tibok::NORMAL` | 🟢 Berde | Matatag nakaSINDI | `0 Hz` (walang tibok) | Karaniwan | Karaniwang operasyon |
 
 </center>
+
+> 🔍 Ang **IEC 60073:2002** ay hindi nagtatakda ng eksaktong frequency values — nagbibigay ito ng mga halimbawa
+(e.g., "**mas mabilis na *flashing* = mas mataas ang *urgency***").
+> 
+> Layunin nitong *maipahayag ang antas ng urgency sa paraang madaling maunawaan ng tao*.
+> Sa madaling salita: **mas mahalaga ang *relatibong* bilis ng flashing kaysa sa eksaktong frequency**.
 
 ---
 

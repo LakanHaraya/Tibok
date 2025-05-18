@@ -23,7 +23,7 @@
 Ang **Tibok** ay isang magaan at mumunting aklatan para sa
 pagkontrol ng LED o iba pang output device bilang *status indicator* na
 sumasalamin sa operational status ng sistema. Ang tibok ay maaaring magpakita ng
-iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, o `Tibok::EMERGENCY` batay sa antas ng alerto sa pamantayang
+iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::STANDBY`, `Tibok::NOTICE`, `Tibok::WARNING`, `Tibok::CRITICAL`, o `Tibok::EMERGENCY` batay sa antas ng alerto sa pamantayang
 [IEC 60073:2002](https://webstore.iec.ch/en/publication/587).
 
 
@@ -36,12 +36,12 @@ iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, 
 
 ## Mga Tampok
 
-- Maaaring ikumpigura ang antas ng tibok batay sa mga predefined na halaga (4Hz hanggang 0.5Hz)
-- Non-blocking na `update()` para sa maayos na pagtakbo ng `loop()`
+- Maaaring ikumpigura ang antas ng tibok batay sa mga predefined na halaga
+- *Non-blocking* na `update()` para sa maayos na pagtakbo ng `loop()`
 - Suportado ang active HIGH o LOW na logic
-- Puwedeng i-enable o i-disable ang pagtibok sa runtime
-- May readable na mga label para sa bawat antas ng tibok
-- Fluent API para sa madaling dugtungan ng mga method
+- Puwedeng i-*enable* o i-*disable* ang pagtibok sa runtime
+- May readable na mga label para sa bawat antas ng tibok (sa Filipino)
+- Suportado ang dugtungan (*chaining*) ng mga setter method
 
 ---
 

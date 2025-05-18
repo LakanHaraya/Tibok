@@ -13,15 +13,17 @@
 class Tibok {
     public:
         // Antas ng tibok
-        enum HeartbeatLevel : uint16_t {
-            EMERGENCY = 125,    /** @brief 4 Hz – 125ms bawat hatimpuktol (HIGH or LOW); 250ms kabuoang puktol.*/
-            CRITICAL = 250,     /** @brief 2 Hz – 250ms bawat hatimpuktol; 500ms kabuoang puktol.*/
-            WARNING = 500,      /** @brief 1 Hz – 500ms bawat hatimpuktol; 1s puktol.*/
-            NORMAL = 1000       /** @brief 0.5 Hz – 1s bawat hatimpuktol; 2s puktol.*/
+        enum HeartbeatLevel : uint8_t {
+            EMERGENCY,  // 4Hz burst na may 3 tibok (6 tikwas), pagkatapos ay 1s na pagtigil 
+            CRITICAL,   // Karaniwang 4Hz
+            WARNING,    // Karaniwang 2Hz
+            NOTICE,     // Karaniwang 1Hz
+            STANDBY,    // Karaniwang 0.5Hz
+            NORMAL      // Matatag SINDI
         };
 
         // Konstruktor
-        Tibok(int pin, HeartbeatLevel level = Tibok::NORMAL, bool activeHigh = true, bool enabled = true);
+        Tibok(int pin, HeartbeatLevel level = Tibok::STANDBY, bool activeHigh = true, bool enabled = true);
 
         // Pangkilos
         void update();
@@ -29,7 +31,7 @@ class Tibok {
         // Panakda
         Tibok& enable(bool enabled = true);
         Tibok& setActiveHigh(bool activeHigh = true);
-        Tibok& setHeartbeat(HeartbeatLevel level = Tibok::NORMAL);
+        Tibok& setHeartbeat(HeartbeatLevel level = Tibok::STANDBY);
 
         // Panguha
         int getPin() const;
@@ -38,7 +40,6 @@ class Tibok {
         bool isEnabled() const;
         bool getState() const;
         unsigned long getLastToggle() const;
-        unsigned long getHeartbeat() const;
     
     private:
         int _pin;                   /**Ang GPIO pin na ginagamit para sa status inidcator.*/
@@ -47,6 +48,11 @@ class Tibok {
         bool _state;                /**Kasalukuyang estado ng status indicator: HIGH o LOW. */
         bool _activeHigh;           /**Tinutukoy kung active HIGH o LOW ang status indicator. */
         bool _enabled;              /**Nagpapahiwatig kung pinagana ang pagtibok. */
+        uint8_t _emergencyPhase = 0; /**Bagong internal state tracker para sa EMERGENCY */
 
         void _applyState();
+        void _toggle();
+        void _updateWithInterval(unsigned long now, uint16_t interval);
+        void _ensureOn();
+        void _updateStandby(unsigned long now);
 };
