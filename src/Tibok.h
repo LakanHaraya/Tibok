@@ -6,7 +6,7 @@
  * @brief Konstruktor para sa Tibok class.
  * 
  * @param pin GPIO pin number kung saan nakakabit ang status indicator.
- * @param level Ang paunang antas ng pagtibok (heartbeat level). Default: `Tibok::NORMAL` (0.5Hz, 2s puktol).
+ * @param level Ang paunang antas ng pagtibok (heartbeat level). Default: `Tibok::STANDBY` (Mabugsong 0.5Hz, 2s puktol).
  * @param activeHigh Tinutukoy kung active HIGH o LOW ang output (default: `true`).
  * @param enabled Kung awtomatikong papaganahin ang pagtibok (default: `true`).
  */
@@ -14,12 +14,12 @@ class Tibok {
     public:
         // Antas ng tibok
         enum HeartbeatLevel : uint8_t {
-            EMERGENCY,  // 4Hz burst na may 3 tibok (6 tikwas), pagkatapos ay 1s na pagtigil 
-            CRITICAL,   // Karaniwang 4Hz
-            WARNING,    // Karaniwang 2Hz
-            NOTICE,     // Karaniwang 1Hz
-            STANDBY,    // Karaniwang 0.5Hz
-            NORMAL      // Matatag SINDI
+            EMERGENCY,  // Karaniwang 4Hz
+            CRITICAL,   // Karaniwang 2Hz
+            WARNING,    // Karaniwang 1Hz
+            NOTICE,     // Karaniwang 0.5Hz
+            STANDBY,    // Mabugsong 0.5Hz na may 2 tibok (4 na tikwas), pagkatapos ay 1s pagtigil
+            NORMAL      // Matatag nakaSINDI
         };
 
         // Konstruktor
@@ -28,12 +28,12 @@ class Tibok {
         // Pangkilos
         void update();
 
-        // Panakda
+        // Pantakda
         Tibok& enable(bool enabled = true);
         Tibok& setActiveHigh(bool activeHigh = true);
         Tibok& setHeartbeat(HeartbeatLevel level = Tibok::STANDBY);
 
-        // Panguha
+        // Pangkuha
         int getPin() const;
         String getLabel() const;
         bool isActiveHigh() const;
