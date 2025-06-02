@@ -5,6 +5,7 @@
 ![First Commit](https://img.shields.io/badge/first%20commit-2025--04--11-FCD116)
 ![Language](https://img.shields.io/badge/language-Filipino%20(may%20neolohismo)-0038A8)
 [![Mga Pagkilala](https://img.shields.io/badge/%F0%9F%93%9D-ATTRIBUTIONS-blue)](docs/ATTRIBUTIONS.md)
+
 # *Tibok na Indikasyon para Bantayan ang Operasyon at Kondisyon*
 
 <div align="center">
