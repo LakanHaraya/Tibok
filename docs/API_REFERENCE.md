@@ -201,7 +201,7 @@ Mga predefined na antala para sa iba't ibang antas ng alerto:
 
 ### 🔍 Estado
 - Gamitin ang `isEnabled()`, `getState()`, at `getLastToggle()` para sa lohika.
-- Gamitin ang `getHeartbeat()` at `getLabel()` para sa status reporting.
+- Gamitin ang `getLabel()` para sa status reporting.
 
 ### 🧱 Inisyal
 - Walang `begin()` function — gumamit ng konstruktor sa `setup()` o global scope.

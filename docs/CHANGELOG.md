@@ -6,15 +6,18 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
-## [Unreleased]
+## [0.3.0] - 2025-06-02
 
 ### Idinagdag
 
-- Idinagdag ang mga bagong antas ng tibok: `Tibok::STANDBY`, at `Tibok::NOTICE`.
+- Idinagdag ang `Tibok::STANDBY` bilang inidkasyon ng pag-antabay.
+- Idinagdag ang `Tibok::NOTICE` bilang indikasyon ng pagpapaalala.
 
 ### Pinalitan
 
-- Sa `Tibok` constructor at `setHeartbeat(...)`, pinalitan ang default `HeartbeatLevel` magmula sa `Tibok::NORMAL` patungo sa `Tibok::STANDBY`.
+- Ginawang ganap na nakasindi ang `Tibok::NORMAL`.
+- Inilipat sa `Tibok::NOTICE` ang antas ng tibok 0.5 Hz ng dating `Tibok::NORMAL`.
+- Pinalitan ang default `HeartbeatLevel` magmula sa `Tibok::NORMAL` patungo sa `Tibok::STANDBY`.
 
 ### Tinanggal
 

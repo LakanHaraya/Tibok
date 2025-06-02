@@ -1,4 +1,5 @@
 # 📖 `Tibok/` 
+# *Tibok na Indikasyon para Bantayan ang Operasyon at Kondisyon*
 [![Release](https://img.shields.io/github/v/release/LakanHaraya/Tibok?include_prereleases)](https://github.com/LakanHaraya/Tibok/tags)
 ![Malapamantayan](https://img.shields.io/badge/malapamantayan-LNDH--0051-purple)
 ![Last Commit](https://img.shields.io/github/last-commit/LakanHaraya/Tibok?label=last%20commit&style=flat-square)
