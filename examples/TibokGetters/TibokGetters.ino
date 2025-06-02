@@ -36,9 +36,6 @@ void setup() {
     Serial.print("Tatak: ");
     Serial.println(statusLed.getLabel());
 
-    Serial.print("Hatimpuktol (ms): ");
-    Serial.println(statusLed.getHeartbeat()); 
-
     Serial.print("Aktibong Mataas: ");
     Serial.println(statusLed.isActiveHigh() ? "true" : "false");
 
