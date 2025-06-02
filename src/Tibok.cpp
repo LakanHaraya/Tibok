@@ -2,9 +2,70 @@
 
 // Private helper method para ipatupad ang kasalukuyang estado ng output pin.
 void Tibok::_applyState() {
-    digitalWrite(_pin, (_enabled && _state == _activeHigh) ? HIGH : LOW);
+    bool _effectiveState = _state;
+
+    if (_level == STANDBY) {
+        // Baliktarin ang active logic para sa STANDBY lang
+        _effectiveState = !_state;
+    }
+
+    digitalWrite(_pin, (_activeHigh ? _effectiveState : !_effectiveState));
 }
 
+//
+void Tibok::_toggle() {
+    _lastToggle = millis();
+    _state = !_state;
+    _applyState();
+}
+
+// STANDBY:
+void Tibok::_updateStandby(unsigned long now) {
+    constexpr uint8_t BURST_COUNT = 2;
+    constexpr uint16_t BURST_INTERVAL = 150;
+    constexpr uint16_t BURST_PAUSE = 1700;
+
+    static uint8_t _burstCounter = 0;
+    static bool _inBurst = true;
+
+    if (_inBurst) {
+        if (now - _lastToggle >= BURST_INTERVAL) {
+            _toggle();
+            _burstCounter++;
+            _lastToggle = now;
+
+            if (_burstCounter >= BURST_COUNT * 2) { // ON + OFF = 2 toggles per blink
+                _inBurst = false;
+                _burstCounter = 0;
+                _lastToggle = now;
+            }
+        }
+    }
+    else {
+        if (now - _lastToggle >= BURST_PAUSE) {
+            _inBurst = true;
+            _lastToggle = now;
+        }
+    }
+}
+
+void Tibok::_updateWithInterval(unsigned long now, uint16_t interval) {
+    if (now - _lastToggle >= interval) {
+        _toggle();
+        _lastToggle = now;
+    }
+}
+
+void Tibok::_ensureOn() {
+    if (!_state) {
+        _state = true;
+        _applyState();
+    }
+}
+
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 
 // Konstruktor ng Tibok class na tumatanggap ng pin number, heartbeat level, active HIGH/LOW flag, at enabled flag.
@@ -16,12 +77,32 @@ Tibok::Tibok(int pin, HeartbeatLevel level, bool activeHigh, bool enabled) : _pi
 // I-update ang estado ng status indicator batay sa kasalukuyang antas ng pagtibok (dapat ilagay sa loob ng `loop()`).
 void Tibok::update() {
     if (!_enabled) return;
-
     unsigned long now = millis();
-    if (now - _lastToggle >= (unsigned long)_level) {
-        _lastToggle = now;
-        _state = !_state;
-        _applyState();
+
+    switch (_level) {
+        case EMERGENCY:
+            _updateWithInterval(now, 125); // 4Hz
+            break;
+
+        case CRITICAL:
+            _updateWithInterval(now, 250); // 2Hz
+            break;
+
+        case WARNING:
+            _updateWithInterval(now, 500); // 1Hz
+            break;
+
+        case NOTICE:
+            _updateWithInterval(now, 1000); // 0.5Hz
+            break;
+
+        case STANDBY:
+            _updateStandby(now);
+            break;
+
+        case NORMAL:
+            _ensureOn();    // Matatag SINDI
+            break;
     }
 }
 
@@ -43,6 +124,7 @@ Tibok& Tibok::setActiveHigh(bool activeHigh) {
 // Itinatakda ang bagong heartbeat level at ina-update ang tagal ng pagtikwas.
 Tibok& Tibok::setHeartbeat(HeartbeatLevel level) {
     _level = level;
+    _lastToggle = millis(); // Magreset ng pagtitityempo
     return *this; // Ibalik ang kasalukuyang object para sa chaining
 }
 
@@ -54,16 +136,13 @@ int Tibok::getPin() const {
 // Kinukuha ang label ng kasalukuyang Heartbeat level.
 String Tibok::getLabel() const {
     switch (_level) {
-        case EMERGENCY:
-            return F("KAGIPITAN");
-        case CRITICAL:
-            return F("KRITIKAL");
-        case WARNING:
-            return F("BABALA");
-        case NORMAL:
-            return F("NORMAL");
-        default:
-            return F("DI-KILALA");
+        case EMERGENCY: return F("KAGIPITAN");
+        case CRITICAL:  return F("KRITIKAL");
+        case WARNING:   return F("BABALA");
+        case NOTICE:    return F("PAALALA");
+        case STANDBY:   return F("ANTABAY");
+        case NORMAL:    return F("NORMAL");
+        default:        return F("DI-KILALA");
     }
 }
 
@@ -85,9 +164,4 @@ bool Tibok::getState() const {
 // Kinukuha ang huling tagal ng pagtikwas ng status indicator.
 unsigned long Tibok::getLastToggle() const {
     return _lastToggle;
-}
-
-// Kinukuha ang numerical value ng napiling Heartbeat level.
-unsigned long Tibok::getHeartbeat() const {
-    return static_cast<unsigned long>(_level);
 }

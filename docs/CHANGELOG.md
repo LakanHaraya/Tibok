@@ -6,15 +6,39 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
+## [0.3.0] - 2025-06-02
+
+### Idinagdag
+
+- Idinagdag ang `Tibok::STANDBY` bilang inidkasyon ng pag-antabay.
+- Idinagdag ang `Tibok::NOTICE` bilang indikasyon ng pagpapaalala.
+
+### Pinalitan
+
+- Ginawang ganap na nakasindi ang `Tibok::NORMAL`.
+- Inilipat sa `Tibok::NOTICE` ang antas ng tibok 0.5 Hz ng dating `Tibok::NORMAL`.
+- Pinalitan ang default `HeartbeatLevel` magmula sa `Tibok::NORMAL` patungo sa `Tibok::STANDBY`.
+
+### Tinanggal
+
+- Tinanggal ang `getHeartbeat()` method
+
+### Inayos
+
+- Pagpapahusay sa buong implementasyon ng mga API.
+- Pagsasapanahon ng mga dokumentasyon.
+
+---
+
 ## [0.2.1] - 2025-05-15
 
 ### Pinalitan
-- **BUMABASAG:** Inilipat ang enum `HeartbeatLevel` sa loob ng `Tibok` class (`Tibok::HeartbeatLevel`) upang maiwasan ang alitan sa ibang libraries. Gamitin na ngayon ang `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, at `Tibok::EMERGENCY`.
-- **BUMABASAG:** Ibinalik ang malinaw na pangalan ng mga setter method patungo sa `setActiveHigh()`, at `setHeartbeat()`.
+- Inilipat ang enum `HeartbeatLevel` sa loob ng `Tibok` class (`Tibok::HeartbeatLevel`) upang maiwasan ang alitan sa ibang libraries. Gamitin na ngayon ang `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, at `Tibok::EMERGENCY`.
+- Ibinalik ang malinaw na pangalan ng mga setter method patungo sa `setActiveHigh()`, at `setHeartbeat()`.
 
 ### Inayos
-- **Munting optimisasyon**. Walang pagbabago sa lohika.
-- **Munting pagsasaayos** ng dokumentasyon.
+- Munting optimisasyon. Walang pagbabago sa lohika.
+- Munting pagsasaayos ng dokumentasyon.
 
 ---
 

@@ -6,6 +6,8 @@
 ![Language](https://img.shields.io/badge/language-Filipino%20(may%20neolohismo)-0038A8)
 [![Mga Pagkilala](https://img.shields.io/badge/%F0%9F%93%9D-ATTRIBUTIONS-blue)](docs/ATTRIBUTIONS.md)
 
+# *Tibok na Indikasyon para Bantayan ang Operasyon at Kondisyon*
+
 <div align="center">
 
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" alt="Arduino Logo" title="Arduino" width="90" style="vertical-align:middle;" loading="lazy"/>
@@ -13,7 +15,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/International_Electrotechnical_Commission_Logo.svg" alt="IEC Logo" title="IEC" width="90" style="vertical-align:middle;" loading="lazy"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" alt="MIT Logo" title="MIT License" width="90" style="vertical-align:middle;" loading="lazy"/>
 
-  <p><em>Ginagamit sa proyektong ito ang mga sumusunod na teknolohiya at pamantayan.</em></p>
+  <p><em>Ginagamit sa proyektong ito ang mga sumusunod na teknolohiya at pamantayan.<br>Walang ipinahihiwatig na ugnayan o pag-eendorso</em></p>
 
 </div>
 
@@ -23,7 +25,7 @@
 Ang **Tibok** ay isang magaan at mumunting aklatan para sa
 pagkontrol ng LED o iba pang output device bilang *status indicator* na
 sumasalamin sa operational status ng sistema. Ang tibok ay maaaring magpakita ng
-iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, o `Tibok::EMERGENCY` batay sa antas ng alerto sa pamantayang
+iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::STANDBY`, `Tibok::NOTICE`, `Tibok::WARNING`, `Tibok::CRITICAL`, o `Tibok::EMERGENCY` batay sa antas ng alerto sa pamantayang
 [IEC 60073:2002](https://webstore.iec.ch/en/publication/587).
 
 
@@ -36,20 +38,21 @@ iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, 
 
 ## Mga Tampok
 
-- Maaaring ikumpigura ang antas ng tibok batay sa mga predefined na halaga (4Hz hanggang 0.5Hz)
-- Non-blocking na `update()` para sa maayos na pagtakbo ng `loop()`
+- Maaaring ikumpigura ang antas ng tibok batay sa mga predefined na halaga
+- *Non-blocking* na `update()` para sa maayos na pagtakbo ng `loop()`
 - Suportado ang active HIGH o LOW na logic
-- Puwedeng i-enable o i-disable ang pagtibok sa runtime
-- May readable na mga label para sa bawat antas ng tibok
-- Fluent API para sa madaling dugtungan ng mga method
+- Puwedeng i-*enable* o i-*disable* ang pagtibok sa runtime
+- May readable na mga label para sa bawat antas ng tibok (sa Filipino)
+- Suportado ang dugtungan (*chaining*) ng mga setter method
 
 ---
 
 ## Karagdagang Dokumentasyon
 
-- [docs/INSTALLATION.md](docs/INSTALLATION.md)
-- [docs/API_REFERENCE.md](docs/API_REFERENCE.md)
-- [docs/CHANGELOG.md](docs/CHANGELOG.md)
+- [docs/INSTALLATION.md](docs/INSTALLATION.md) – Paano Mag-instal?
+- [docs/API_REFERENCE.md](docs/API_REFERENCE.md) – Paano Gamitin?
+- [docs/CHANGELOG.md](docs/CHANGELOG.md) – Ano ang Bago?
+- [docs/ATTRIBUTIONS.md](docs/ATTRIBUTIONS.md) – Mga Pagkilala.
 
 ---
 
