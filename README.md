@@ -49,9 +49,10 @@ iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::STANDBY`, `Tibok::NOTICE`, `T
 
 ## Karagdagang Dokumentasyon
 
-- [docs/INSTALLATION.md](docs/INSTALLATION.md)
-- [docs/API_REFERENCE.md](docs/API_REFERENCE.md)
-- [docs/CHANGELOG.md](docs/CHANGELOG.md)
+- [docs/INSTALLATION.md](docs/INSTALLATION.md) – Paano Mag-instal?
+- [docs/API_REFERENCE.md](docs/API_REFERENCE.md) – Paano Gamitin?
+- [docs/CHANGELOG.md](docs/CHANGELOG.md) – Ano ang Bago?
+- [docs/ATTRIBUTIONS.md](docs/ATTRIBUTIONS.md) – Mga Pagkilala.
 
 ---
 
