@@ -1,11 +1,11 @@
 # 📖 `Tibok/` 
-# *Tibok na Indikasyon para Bantayan ang Operasyon at Kondisyon*
 [![Release](https://img.shields.io/github/v/release/LakanHaraya/Tibok?include_prereleases)](https://github.com/LakanHaraya/Tibok/tags)
 ![Malapamantayan](https://img.shields.io/badge/malapamantayan-LNDH--0051-purple)
 ![Last Commit](https://img.shields.io/github/last-commit/LakanHaraya/Tibok?label=last%20commit&style=flat-square)
 ![First Commit](https://img.shields.io/badge/first%20commit-2025--04--11-FCD116)
 ![Language](https://img.shields.io/badge/language-Filipino%20(may%20neolohismo)-0038A8)
 [![Mga Pagkilala](https://img.shields.io/badge/%F0%9F%93%9D-ATTRIBUTIONS-blue)](docs/ATTRIBUTIONS.md)
+# *Tibok na Indikasyon para Bantayan ang Operasyon at Kondisyon*
 
 <div align="center">
 
@@ -14,7 +14,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/International_Electrotechnical_Commission_Logo.svg" alt="IEC Logo" title="IEC" width="90" style="vertical-align:middle;" loading="lazy"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" alt="MIT Logo" title="MIT License" width="90" style="vertical-align:middle;" loading="lazy"/>
 
-  <p><em>Ginagamit sa proyektong ito ang mga sumusunod na teknolohiya at pamantayan.</em></p>
+  <p><em>Ginagamit sa proyektong ito ang mga sumusunod na teknolohiya at pamantayan.<br>Walang ipinahihiwatig na ugnayan o pag-eendorso</em></p>
 
 </div>
 
