@@ -159,26 +159,31 @@ Ibinabalik kung ang tibok ay pinagana (`true`) o hindi (`false`).
 ## 📦 Mga Konstant
 
 ### Enum: `HeartbeatLevel`
- 
+
 Mga predefined na antala para sa iba't ibang antas ng alerto:
 
 <center>
 
-| Konstant | Kulay (Rekomendado) | Asal ng Pagtibok <br> (Alinsunod-IEC) | Dalasan (Hz) | Antas ng Priyoridad | Interpretasyon |
-|------|-------|---------|-----------| --- | --- |
-| `Tibok::EMERGENCY` | 🔴 Pula | Kumikislap: mabilis | `~4 Hz` | Pinakamataas | Agarang aksiyon ang kinakailangan |
-| `Tibok::CRITICAL` | 🔴 Pula | Kumikislap: tuloy-tuloy | `~2 Hz` | Mataas | Seryosong atensiyon ang kinakailangan |
-| `Tibok::WARNING` | 🟠 Amber/Dilaw | Kumikislap | `~1 Hz` | Katamtaman | Babalang kondisyon |
-| `Tibok::NORMAL` | 🟢 Berde | Kumikislap: mabagal | `0.5 Hz`   | Karaniwan | Karaniwang operasyon |
-| `Tibok::STANDBY` | 🟢 Berde | Kumikislap: mabugso | `~0.5 Hz` pabugso | Napakababa | Matamlay o nakaantabay |
+| Konstant | Asal ng Pagtibok <br> (Alinsunod-IEC) | Dalasan (Hz) | Antas ng Priyoridad | Interpretasyon |
+|------|-------|-------|---|---|
+| `Tibok::EMERGENCY` | Kumikislap: mabilis | `4 Hz` <br> 4 tibok / 1s | Pinakamataas | Agarang aksiyon ang kinakailangan |
+| `Tibok::CRITICAL` | Kumikislap: tuloy-tuloy | `2 Hz` <br> 2 tibok / 1s | Mataas | Seryosong atensiyon ang kinakailangan |
+| `Tibok::WARNING` | Kumikislap | `1 Hz` <br> 1 tibok / 1s | Katamtaman | Babalang kondisyon |
+| `Tibok::NORMAL` | Kumikislap: mabagal | `0.5 Hz` <br> 1 tibok / 2s | Karaniwan | Karaniwang operasyon |
+| `Tibok::STANDBY` | Kumikislap: lohikang mabugso | `0.5 Hz` <br> 1 antabay / 2s <br> *600ms bugso + 1400ms tigil* | Napakababa | Matamlay o nakaantabay |
 
 </center>
 
+> *Tandaan:*
+> - **1 tibok = 2 tikwas (SINDI + PINDI)**  
+> - **1 Hz = 1 ulit / 1s**
+> - **1s = 1000ms**
+
 > 🔍 Ang **IEC 60073:2002** ay hindi nagtatakda ng eksaktong frequency values — nagbibigay ito ng mga halimbawa
-(e.g., "**mas mabilis na *flashing* = mas mataas ang *urgency***").
+(e.g., "**mas mabilis na *kislap* = mas mataas ang *priyoridad***").
 > 
-> Layunin nitong *maipahayag ang antas ng urgency sa paraang madaling maunawaan ng tao*.
-> Sa madaling salita: **mas mahalaga ang *relatibong* bilis ng flashing kaysa sa eksaktong frequency**.
+> Layunin nitong *maipahayag ang antas ng priyoridad sa paraang madaling maunawaan ng tao*.
+> Sa madaling salita: **mas mahalaga ang *relatibong* bilis ng pagkislap kaysa sa eksaktong dalasan**.
 
 ---
 

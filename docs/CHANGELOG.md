@@ -6,7 +6,7 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
-## [0.4.0] - 2025-08-17
+## [0.4.0] - 2025-08-18
 
 ### Pinalitan
 
@@ -15,6 +15,10 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 ### Tinanggal
 
 - Tinanggal ang `Tibok::NOTICE` dahil sa kalabuan ng gamit nito. 
+
+### Inayos
+
+- Ginawang kada-halimbagay ang lohika ng pabugsong `Tibok::STANDBY`.
 
 ## [0.3.0] - 2025-06-02
 

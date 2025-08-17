@@ -22,8 +22,8 @@ void Tibok::_toggle() {
 // STANDBY:
 void Tibok::_updateStandby(unsigned long now) {
     constexpr uint8_t BURST_COUNT = 2;
-    constexpr uint16_t BURST_INTERVAL = 150;
-    constexpr uint16_t BURST_PAUSE = 1700;
+    constexpr uint16_t BURST_INTERVAL = 150;    // bawat tikwas (150 * 4 = 600ms)
+    constexpr uint16_t BURST_PAUSE = 1400;      // tigil sa pagitan ng bugso
 
     if (_stdbyInBurst) {
         if (now - _lastToggle >= BURST_INTERVAL) {
@@ -31,7 +31,7 @@ void Tibok::_updateStandby(unsigned long now) {
             _stdbyBurstCtr++;
             _lastToggle = now;
 
-            if (_stdbyBurstCtr >= BURST_COUNT * 2) { // ON + OFF = 2 toggles per blink
+            if (_stdbyBurstCtr >= BURST_COUNT * 2) { 
                 _stdbyInBurst = false;
                 _stdbyBurstCtr = 0;
                 _lastToggle = now;

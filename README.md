@@ -38,12 +38,14 @@ iba't ibang antas gaya ng `Tibok::STANDBY`, `Tibok::NORMAL`, `Tibok::WARNING`, `
 
 ## Mga Tampok
 
-- Maaaring ikumpigura ang antas ng tibok batay sa mga predefined na halaga
-- *Non-blocking* na `update()` para sa maayos na pagtakbo ng `loop()`
-- Suportado ang active HIGH o LOW na logic
-- Puwedeng i-*enable* o i-*disable* ang pagtibok sa runtime
-- May readable na mga label para sa bawat antas ng tibok (sa Filipino)
-- Suportado ang dugtungan (*chaining*) ng mga setter method
+- **Limang Heartbeat Levels:** `STANDBY`, `NORMAL`, `WARNING`, `CRITICAL`, `EMERGENCY` (alinsunod sa IEC 60073:2002).  
+- **Flexible Output:** Active HIGH o LOW, madaling baguhin sa runtime.  
+- **Per-Instance State:** Maramihang independent LED indicators.  
+- **Fluent API:** Chainable methods (`enable()`, `setActiveHigh()`, `setHeartbeat()`).  
+- **Non-Blocking Timing:** Gumagamit ng `millis()`; STANDBY may burst+pause logic.  
+- **Madaling Integrasyon:** Simpleng konstruktor at compatible sa Arduino microcontrollers.  
+- **Status Retrieval:** `getState()`, `getLabel()`, `getLastToggle()` para sa monitoring.  
+- **Magaan at Efficient:** Minimal memory footprint, hindi humaharang sa loop.
 
 ---
 
