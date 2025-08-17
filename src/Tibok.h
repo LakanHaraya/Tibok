@@ -14,10 +14,10 @@ class Tibok {
     public:
         // Antas ng tibok
         enum HeartbeatLevel : uint8_t {
-            EMERGENCY,  // 4Hz mabugso na may 3 tibok (6 tikwas), pagkatapos ay 1s na pagtigil 
-            CRITICAL,   // Karaniwang 4Hz
-            WARNING,    // Karaniwang 2Hz
-            NORMAL,     // Karaniwang 1Hz
+            EMERGENCY,  // 4Hz (mabilis)
+            CRITICAL,   // 2Hz (medyo mabilis)
+            WARNING,    // 1Hz (katamtaman)
+            NORMAL,     // 0.5Hz (mabagal)
             STANDBY     // Di-regular sa 0.5Hz
         };
 

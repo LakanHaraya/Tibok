@@ -169,8 +169,8 @@ Mga predefined na antala para sa iba't ibang antas ng alerto:
 | `Tibok::EMERGENCY` | 🔴 Pula | Kumikislap: mabilis | `~4 Hz` | Pinakamataas | Agarang aksiyon ang kinakailangan |
 | `Tibok::CRITICAL` | 🔴 Pula | Kumikislap: tuloy-tuloy | `~2 Hz` | Mataas | Seryosong atensiyon ang kinakailangan |
 | `Tibok::WARNING` | 🟠 Amber/Dilaw | Kumikislap | `~1 Hz` | Katamtaman | Babalang kondisyon |
-| `Tibok::NORMAL` | 🟢 Berde | Matatag nakaSINDI | `0 Hz` (walang tibok) | Karaniwan | Karaniwang operasyon |
-| `Tibok::STANDBY` | 🟢 Berde | Kumikislap: mabugso | `~0.5 Hz` mabugso | Napakababa | Matamlay o nakaantabay |
+| `Tibok::NORMAL` | 🟢 Berde | Kumikislap: mabagal | `0.5 Hz`   | Karaniwan | Karaniwang operasyon |
+| `Tibok::STANDBY` | 🟢 Berde | Kumikislap: mabugso | `~0.5 Hz` pabugso | Napakababa | Matamlay o nakaantabay |
 
 </center>
 
