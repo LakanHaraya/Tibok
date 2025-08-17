@@ -6,7 +6,7 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
-## [0.3.1] - 2025-08-17
+## [0.4.0] - 2025-08-17
 
 ### Pinalitan
 
