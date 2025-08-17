@@ -25,25 +25,22 @@ void Tibok::_updateStandby(unsigned long now) {
     constexpr uint16_t BURST_INTERVAL = 150;
     constexpr uint16_t BURST_PAUSE = 1700;
 
-    static uint8_t _burstCounter = 0;
-    static bool _inBurst = true;
-
-    if (_inBurst) {
+    if (_stdbyInBurst) {
         if (now - _lastToggle >= BURST_INTERVAL) {
             _toggle();
-            _burstCounter++;
+            _stdbyBurstCtr++;
             _lastToggle = now;
 
-            if (_burstCounter >= BURST_COUNT * 2) { // ON + OFF = 2 toggles per blink
-                _inBurst = false;
-                _burstCounter = 0;
+            if (_stdbyBurstCtr >= BURST_COUNT * 2) { // ON + OFF = 2 toggles per blink
+                _stdbyInBurst = false;
+                _stdbyBurstCtr = 0;
                 _lastToggle = now;
             }
         }
     }
     else {
         if (now - _lastToggle >= BURST_PAUSE) {
-            _inBurst = true;
+            _stdbyInBurst = true;
             _lastToggle = now;
         }
     }

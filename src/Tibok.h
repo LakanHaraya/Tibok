@@ -6,7 +6,7 @@
  * @brief Konstruktor para sa Tibok class.
  * 
  * @param pin GPIO pin number kung saan nakakabit ang status indicator.
- * @param level Ang paunang antas ng pagtibok (heartbeat level). Default: `Tibok::STANDBY` (Mabugsong 0.5Hz, 2s puktol).
+ * @param level Ang paunang antas ng pagtibok (heartbeat level). Default: `Tibok::STANDBY`.
  * @param activeHigh Tinutukoy kung active HIGH o LOW ang output (default: `true`).
  * @param enabled Kung awtomatikong papaganahin ang pagtibok (default: `true`).
  */
@@ -47,7 +47,10 @@ class Tibok {
         bool _state;                /**Kasalukuyang estado ng status indicator: HIGH o LOW. */
         bool _activeHigh;           /**Tinutukoy kung active HIGH o LOW ang status indicator. */
         bool _enabled;              /**Nagpapahiwatig kung pinagana ang pagtibok. */
-        uint8_t _emergencyPhase = 0; /**Bagong internal state tracker para sa EMERGENCY */
+
+        // Para sa STANDBY burst logic (per-instance, hindi shared)
+        uint8_t _stdbyBurstCtr = 0;
+        bool _stdbyInBurst = true;
 
         void _applyState();
         void _toggle();
