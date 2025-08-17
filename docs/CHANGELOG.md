@@ -10,7 +10,8 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ### Pinalitan
 
-- Ibinalik sa tibok 0.5 Hz ang `Tibok::NORMAL`
+- Ibinalik sa tibok 0.5 Hz ang `Tibok::NORMAL`.
+- Inakma ang buong agwat ng `Tibok::STANBY` sa dalawang segundo.
 
 ### Tinanggal
 
@@ -19,6 +20,7 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 ### Inayos
 
 - Ginawang kada-halimbagay ang lohika ng pabugsong `Tibok::STANDBY`.
+- Nilinaw ang mga dokumentasyon.
 
 ## [0.3.0] - 2025-06-02
 
