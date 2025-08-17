@@ -56,13 +56,6 @@ void Tibok::_updateWithInterval(unsigned long now, uint16_t interval) {
     }
 }
 
-void Tibok::_ensureOn() {
-    if (!_state) {
-        _state = true;
-        _applyState();
-    }
-}
-
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
@@ -92,16 +85,12 @@ void Tibok::update() {
             _updateWithInterval(now, 500); // 1Hz
             break;
 
-        case NOTICE:
+        case NORMAL:
             _updateWithInterval(now, 1000); // 0.5Hz
             break;
 
         case STANDBY:
             _updateStandby(now);
-            break;
-
-        case NORMAL:
-            _ensureOn();    // Matatag SINDI
             break;
     }
 }
@@ -139,9 +128,8 @@ String Tibok::getLabel() const {
         case EMERGENCY: return F("KAGIPITAN");
         case CRITICAL:  return F("KRITIKAL");
         case WARNING:   return F("BABALA");
-        case NOTICE:    return F("PAALALA");
-        case STANDBY:   return F("ANTABAY");
         case NORMAL:    return F("NORMAL");
+        case STANDBY:   return F("ANTABAY");
         default:        return F("DI-KILALA");
     }
 }

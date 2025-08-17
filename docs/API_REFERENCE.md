@@ -20,9 +20,8 @@ Ito ang detalyadong talaan ng mga magagamit na *API (Application Programming Int
 [`Tibok::EMERGENCY`](#enum-heartbeatlevel)
 [`Tibok::CRITICAL`](#enum-heartbeatlevel)
 [`Tibok::WARNING`](#enum-heartbeatlevel)
-[`Tibok::NOTICE`](#enum-heartbeatlevel)
-[`Tibok::STANDBY`](#enum-heartbeatlevel)
 [`Tibok::NORMAL`](#enum-heartbeatlevel)
+[`Tibok::STANDBY`](#enum-heartbeatlevel)
 
 ---
 
@@ -84,7 +83,7 @@ Itinatakda ang bagong heartbeat level.
 
 | Parameter | Uri | Paliwanag | Mga Halagang <br> Tinatanggap | Default |
 |----------|-----|----|----|---|
-| `level` | `HeartbeatLevel` | Bagong itinakdang antas ng tibok. <br> [tingnan](#enum-heartbeatlevel) |  `Tibok::EMERGENCY` <br> `Tibok::CRITICAL` <br> `Tibok::WARNING` <br> `Tibok::NOTICE` <br> `Tibok::STANDBY` <br> `Tibok::NORMAL` | `Tibok::STANDBY` |
+| `level` | `HeartbeatLevel` | Bagong itinakdang antas ng tibok. <br> [tingnan](#enum-heartbeatlevel) |  `Tibok::EMERGENCY` <br> `Tibok::CRITICAL` <br> `Tibok::WARNING` <br> `Tibok::NORMAL` <br> `Tibok::STANDBY` | `Tibok::STANDBY` |
 
 </center>
 
@@ -127,9 +126,8 @@ Ibinabalik ang human-readable na label ng kasalukuyang `HeartbeatLevel`.
 > | `Tibok::EMERGENCY` | `"KAGIPITAN"` |
 > | `Tibok::CRITICAL`  | `"KRITIKAL"`  |
 > | `Tibok::WARNING`   | `"BABALA"`    |
-> | `Tibok::NOTICE`    | `"PAALALA"`   | 
-> | `Tibok::STANDBY`   | `"ANTABAY"`   |
 > | `Tibok::NORMAL`    | `"NORMAL"`    |
+> | `Tibok::STANDBY`   | `"ANTABAY"`   |
 > | (fallback)         | `"DI-KILALA"` |
 
 ---
@@ -171,9 +169,8 @@ Mga predefined na antala para sa iba't ibang antas ng alerto:
 | `Tibok::EMERGENCY` | 🔴 Pula | Kumikislap: mabilis | `~4 Hz` | Pinakamataas | Agarang aksiyon ang kinakailangan |
 | `Tibok::CRITICAL` | 🔴 Pula | Kumikislap: tuloy-tuloy | `~2 Hz` | Mataas | Seryosong atensiyon ang kinakailangan |
 | `Tibok::WARNING` | 🟠 Amber/Dilaw | Kumikislap | `~1 Hz` | Katamtaman | Babalang kondisyon |
-| `Tibok::NOTICE` | 🟢 Berde | Kumikislap: mabagal | `~0.5 Hz` | Mababa | Pang-impormasyong kondisyon |
-| `Tibok::STANDBY` | 🟢 Berde | Kumikislap: mabugso | `~0.5 Hz` mabugso | Napakababa | Matamlay o nakaantabay |
 | `Tibok::NORMAL` | 🟢 Berde | Matatag nakaSINDI | `0 Hz` (walang tibok) | Karaniwan | Karaniwang operasyon |
+| `Tibok::STANDBY` | 🟢 Berde | Kumikislap: mabugso | `~0.5 Hz` mabugso | Napakababa | Matamlay o nakaantabay |
 
 </center>
 

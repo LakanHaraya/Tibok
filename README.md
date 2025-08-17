@@ -25,7 +25,7 @@
 Ang **Tibok** ay isang magaan at mumunting aklatan para sa
 pagkontrol ng LED o iba pang output device bilang *status indicator* na
 sumasalamin sa operational status ng sistema. Ang tibok ay maaaring magpakita ng
-iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::STANDBY`, `Tibok::NOTICE`, `Tibok::WARNING`, `Tibok::CRITICAL`, o `Tibok::EMERGENCY` batay sa antas ng alerto sa pamantayang
+iba't ibang antas gaya ng `Tibok::STANDBY`, `Tibok::NORMAL`, `Tibok::WARNING`, `Tibok::CRITICAL`, o `Tibok::EMERGENCY` batay sa antas ng alerto sa pamantayang
 [IEC 60073:2002](https://webstore.iec.ch/en/publication/587).
 
 
@@ -61,6 +61,7 @@ iba't ibang antas gaya ng `Tibok::NORMAL`, `Tibok::STANDBY`, `Tibok::NOTICE`, `T
 Tingnan ang [`examples/`](examples/) folder para sa mga sumusunod na sketch.
 
 1. [`BasicHeartbeat.ino`](examples/BasicHeartbeat/BasicHeartbeat.ino) – Simpleng tibok
+2. [`SampleHeartbeats.ino`](examples/SampleHeartbeats/SampleHeartbeats.ino) – Mga halimbawa ng pagtibok para sa bawat isang GPIO pin.
 2. [`ConstructorDemo.ino`](examples/ConstructorDemo/ConstructorDemo.ino) – Iba't ibang paraan ng paggamit ng constructor gamit ang magkakaibang bilang ng argumento.
 3. [`DynamicHeartbeat.ino`](examples/DynamicHeartbeat/DynamicHeartbeat.ino) – Pagpapalit ng tibok sa runtime
 4. [`ActiveLowHighHeartbeat.ino`](examples/ActiveLowHighHeartbeat/ActiveLowHighHeartbeat.ino) – Aktibong LOW at aktibong HIGH na signal
@@ -77,10 +78,3 @@ Tingnan ang [`examples/`](examples/) folder para sa mga sumusunod na sketch.
 
 ## Lisensiya <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" alt="Massachusetts Institute of Technology (MIT) Logo" width="40" style="vertical-align:middle;"/>
 Ang **Tibok** ay inilabas sa ilalim ng [MIT License](LICENSE)
-
-## Mga Pagkilala
-
-Ang proyektong ito ay gumagamit ng ilang opisyal na logo at larawan
-para sa pang-impormasyon at pang-edukasyon na layunin. Para sa
-detalyadong tala ng mga pinagmulan at lisensiya ng mga ito,
-mangyaring basahin ang [docs/ATTRIBUTIONS.md](docs/ATTRIBUTIONS.md).

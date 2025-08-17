@@ -6,6 +6,16 @@ Ang format na ito ay batay sa [Keep a Changelog](https://keepachangelog.com/en/1
 
 ---
 
+## [0.3.1] - 2025-08-17
+
+### Pinalitan
+
+- Ibinalik sa tibok 0.5 Hz ang `Tibok::NORMAL`
+
+### Tinanggal
+
+- Tinanggal ang `Tibok::NOTICE` dahil sa kalabuan ng gamit nito. 
+
 ## [0.3.0] - 2025-06-02
 
 ### Idinagdag

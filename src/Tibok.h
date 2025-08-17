@@ -17,9 +17,8 @@ class Tibok {
             EMERGENCY,  // 4Hz mabugso na may 3 tibok (6 tikwas), pagkatapos ay 1s na pagtigil 
             CRITICAL,   // Karaniwang 4Hz
             WARNING,    // Karaniwang 2Hz
-            NOTICE,     // Karaniwang 1Hz
-            STANDBY,    // Karaniwang 0.5Hz
-            NORMAL      // Matatag SINDI
+            NORMAL,     // Karaniwang 1Hz
+            STANDBY     // Di-regular sa 0.5Hz
         };
 
         // Konstruktor
@@ -53,6 +52,5 @@ class Tibok {
         void _applyState();
         void _toggle();
         void _updateWithInterval(unsigned long now, uint16_t interval);
-        void _ensureOn();
         void _updateStandby(unsigned long now);
 };
